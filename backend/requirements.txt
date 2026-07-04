@@ -1,0 +1,36 @@
+# Novela backend — pin versions as you go, this is a starting point
+
+# API server (local sidecar the Tauri shell calls over localhost)
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Document ingestion
+pdfplumber
+pymupdf
+python-docx
+ebooklib
+beautifulsoup4
+Pillow
+
+# Language detection
+fasttext-langdetect
+langdetect
+
+# TTS engines
+kokoro>=0.9.4
+soundfile
+parler-tts @ git+https://github.com/huggingface/parler-tts.git
+
+# Forced alignment
+whisperx
+torch
+torchaudio
+
+# Audio post-processing — ffmpeg-normalize CLI + system ffmpeg
+
+# Storage
+sqlmodel
+
+# Tests
+pytest

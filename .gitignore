@@ -1,0 +1,39 @@
+# Model weights (multi-GB, downloaded via models/download_models.py)
+models/*
+!models/.gitkeep
+!models/download_models.py
+
+# Personal library data (books/audio) — should live outside the repo anyway
+# in ~/Library/Application Support/Novela/, but ignore just in case
+library/
+*.wav
+*.flac
+*.m4b
+*.mp3
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# Python / backend
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.venv/
+*.pyc
+
+# Tauri / Rust build output
+src-tauri/target/
+src-tauri/icons/icon.iconset/
+
+# SQLite db (local dev data)
+*.sqlite
+*.sqlite3
+*.db
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

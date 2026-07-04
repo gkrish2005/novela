@@ -1,0 +1,45 @@
+# Cursor Agent Instructions — Novela
+
+Read `docs/PRD.md` in full before starting any task. It is the source of truth
+for scope, data model, and behavior.
+
+## Ground rules
+
+- **Work in phases.** Build in the order laid out in PRD section 8 (Core
+  pipeline → Sync → Export & library → Polish → stretch goals). Do not jump
+  ahead to a later phase's features while an earlier phase is incomplete.
+- **Ask before adding a new major dependency** (a new TTS engine, a new
+  database, a new frontend framework/library not already named in the PRD).
+  Don't silently swap an already-decided choice (e.g. Kokoro, Indic
+  Parler-TTS, WhisperX, SQLite, Tauri) for an alternative.
+- **Keep language-routing logic centralized.** Any code that decides "English
+  path vs Hindi path" should go through one router/dispatch point (per PRD
+  section 5), not be duplicated per feature.
+- **Respect the data model in PRD section 6.** If a change requires altering
+  the schema, say so explicitly and update `docs/PRD.md` alongside the
+  migration — don't let the code and the doc drift apart.
+- **Everything must work offline after setup.** Any new feature that would
+  require a network call at runtime (beyond the one-time model download) needs
+  a flag/explicit opt-in, not a silent default.
+- **Test before declaring a task done.** Run whatever the project's test
+  command is; if none exists yet for the piece you're building, add a minimal
+  one.
+- **Don't touch `models/`** beyond what `download_models.py` manages — it's
+  gitignored and can be large.
+
+## Stack reminders
+
+- Frontend: React inside Tauri (Rust shell) — not Electron.
+- Backend: Python, run as a local sidecar process over `localhost`, not
+  bundled directly into the Rust binary.
+- TTS: Kokoro for English, AI4Bharat Indic Parler-TTS for Hindi. XTTS-v2 is a
+  documented fallback only — don't default to it without being asked.
+- Alignment: WhisperX for both languages, passing the correct `language` code.
+- Audio post-processing: ffmpeg (`ffmpeg-normalize` for loudness, `ffmpeg`
+  for concat/encode to `.m4b`/`.mp3`).
+- DB: SQLite. Filesystem for audio files, referenced by path in SQLite.
+
+## When in doubt
+
+If the PRD is ambiguous or silent on something, stop and ask rather than
+guessing — flag it as a question instead of picking a default.
