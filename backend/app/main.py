@@ -83,6 +83,8 @@ def _book_out(session: Session, book: Book) -> BookOut:
             )
             for c in chapters
         ],
+        voice_id=book.voice_id,
+        voice_prompt=book.voice_prompt,
     )
 
 
@@ -103,22 +105,128 @@ def get_book(book_id: int) -> BookOut:
 
 
 @app.patch("/books/{book_id}")
-def update_book(book_id: int, language: str | None = None) -> BookOut:
+def update_book(
+    book_id: int,
+    title: str | None = None,
+    language: str | None = None,
+    voice_id: str | None = None,
+    voice_prompt: str | None = None,
+) -> BookOut:
     with get_session() as session:
         book = session.get(Book, book_id)
         if not book:
             raise HTTPException(404, "Book not found")
-        if language in ("en", "hi", "mixed"):
+        
+        if title is not None and title.strip():
+            book.title = title.strip()
+        
+        voice_changed = False
+        if language in ("en", "hi", "mixed") and language != book.language:
             book.language = language
-            session.add(book)
-            session.commit()
+            voice_changed = True
+        
+        if voice_id is not None and voice_id != book.voice_id:
+            book.voice_id = voice_id
+            voice_changed = True
+            
+        if voice_prompt is not None and voice_prompt != book.voice_prompt:
+            book.voice_prompt = voice_prompt
+            voice_changed = True
+
+        if voice_changed:
+            ready_chapters = session.exec(
+                select(Chapter).where(Chapter.book_id == book_id, Chapter.status == "ready")
+            ).all()
+            if ready_chapters:
+                chapters = session.exec(select(Chapter).where(Chapter.book_id == book_id)).all()
+                for ch in chapters:
+                    ch.status = "pending"
+                    ch.audio_path = None
+                    ch.start_ms = 0
+                    ch.duration_ms = 0
+                    session.add(ch)
+                    
+                    wts = session.exec(select(WordTimestamp).where(WordTimestamp.chapter_id == ch.id)).all()
+                    for wt in wts:
+                        session.delete(wt)
+                        
+                    chunks = session.exec(select(Chunk).where(Chunk.chapter_id == ch.id)).all()
+                    for chunk in chunks:
+                        chunk.status = "pending"
+                        chunk.audio_path = None
+                        session.add(chunk)
+                
+                book_audio_dir = AUDIO_DIR / f"book{book_id}"
+                if book_audio_dir.exists():
+                    shutil.rmtree(book_audio_dir, ignore_errors=True)
+                
+                book.total_duration_ms = 0
+
+        session.add(book)
+        session.commit()
+        session.refresh(book)
         return _book_out(session, book)
+
+
+@app.delete("/books/{book_id}")
+def delete_book(book_id: int):
+    with get_session() as session:
+        book = session.get(Book, book_id)
+        if not book:
+            raise HTTPException(404, "Book not found")
+        
+        # 1. Delete source file from imports directory
+        if book.source_file_path:
+            src_path = Path(book.source_file_path)
+            if src_path.exists():
+                try:
+                    src_path.unlink()
+                except Exception:
+                    pass
+        
+        # 2. Delete cover art file
+        if book.cover_path:
+            cov_path = Path(book.cover_path)
+            if cov_path.exists():
+                try:
+                    cov_path.unlink()
+                except Exception:
+                    pass
+
+        # 3. Delete narration audio directory
+        book_audio_dir = AUDIO_DIR / f"book{book_id}"
+        if book_audio_dir.exists():
+            shutil.rmtree(book_audio_dir, ignore_errors=True)
+            
+        # 4. Clean up relational DB objects
+        chapters = session.exec(select(Chapter).where(Chapter.book_id == book_id)).all()
+        for ch in chapters:
+            wts = session.exec(select(WordTimestamp).where(WordTimestamp.chapter_id == ch.id)).all()
+            for wt in wts:
+                session.delete(wt)
+                
+            chunks = session.exec(select(Chunk).where(Chunk.chapter_id == ch.id)).all()
+            for chunk in chunks:
+                session.delete(chunk)
+                
+            session.delete(ch)
+            
+        # Delete active jobs associated with this book
+        jobs = session.exec(select(Job).where(Job.book_id == book_id)).all()
+        for j in jobs:
+            session.delete(j)
+
+        session.delete(book)
+        session.commit()
+    return {"status": "deleted"}
 
 
 @app.post("/import", response_model=ImportResult)
 async def import_file(
     file: UploadFile = File(...),
     language: str | None = Form(None),
+    voice_id: str | None = Form(None),
+    voice_prompt: str | None = Form(None),
 ) -> ImportResult:
     suffix = Path(file.filename or "upload.txt").suffix.lower()
     dest = IMPORTS_DIR / f"import_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}{suffix}"
@@ -132,7 +240,7 @@ async def import_file(
         raise HTTPException(400, str(exc)) from exc
 
     override = language if language in ("en", "hi", "mixed") else None
-    book_id = job_svc.import_parsed_book(parsed, dest, override)
+    book_id = job_svc.import_parsed_book(parsed, dest, override, voice_id, voice_prompt)
 
     with get_session() as session:
         book = session.get(Book, book_id)
@@ -143,6 +251,42 @@ async def import_file(
             detected_language=book.language if book else "en",
             chapter_count=len(chapters),
         )
+
+
+@app.post("/import-path", response_model=ImportResult)
+async def import_local_file(
+    path: str = Form(...),
+    language: str | None = Form(None),
+    voice_id: str | None = Form(None),
+    voice_prompt: str | None = Form(None),
+) -> ImportResult:
+    src_path = Path(path)
+    if not src_path.exists():
+        raise HTTPException(400, f"File not found: {path}")
+
+    suffix = src_path.suffix.lower()
+    dest = IMPORTS_DIR / f"import_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}{suffix}"
+    shutil.copy2(src_path, dest)
+
+    try:
+        parsed = parse_document(dest)
+    except Exception as exc:
+        dest.unlink(missing_ok=True)
+        raise HTTPException(400, str(exc)) from exc
+
+    override = language if language in ("en", "hi", "mixed") else None
+    book_id = job_svc.import_parsed_book(parsed, dest, override, voice_id, voice_prompt)
+
+    with get_session() as session:
+        book = session.get(Book, book_id)
+        chapters = session.exec(select(Chapter).where(Chapter.book_id == book_id)).all()
+        return ImportResult(
+            book_id=book_id,
+            title=book.title if book else parsed.title,
+            detected_language=book.language if book else "en",
+            chapter_count=len(chapters),
+        )
+
 
 
 @app.post("/detect-language", response_model=LanguageDetectResult)
@@ -344,3 +488,46 @@ def export_book(book_id: int, fmt: str = "m4b") -> dict:
         cover = Path(book.cover_path) if book.cover_path else None
         encode_export(files, out, cover, fmt)
         return {"path": str(out)}
+
+
+@app.get("/voices")
+def list_voices() -> dict:
+    voices = [
+        "af_alloy", "af_aoede", "af_bella", "af_heart", "af_jessica", "af_kore", 
+        "af_nicole", "af_nova", "af_river", "af_sarah", "af_sky", "am_adam", 
+        "am_echo", "am_eric", "am_fenrir", "am_liam", "am_michael", "am_onyx", 
+        "am_puck", "am_santa", "bf_alice", "bf_emma", "bf_isabella", "bf_lily", 
+        "bm_daniel", "bm_fable", "bm_george", "bm_lewis", "ef_dora", "em_alex", 
+        "em_santa", "ff_siwis", "hf_alpha", "hf_beta", "hm_omega", "hm_psi", 
+        "if_sara", "im_nicola", "jf_alpha", "jf_gongitsune", "jf_nezumi", 
+        "jf_tebukuro", "jm_kumo", "pf_dora", "pm_alex", "pm_santa", "zf_xiaobei", 
+        "zf_xiaoni", "zf_xiaoxiao", "zf_xiaoyi", "zm_yunjian", "zm_yunxi", 
+        "zm_yunxia", "zm_yunyang"
+    ]
+    return {"voices": voices}
+
+
+@app.get("/voices/hindi-presets")
+def get_hindi_presets() -> list[dict]:
+    return [
+        {"id": "clear_warm_female", "name": "Clear Warm Female", "description": "Female speaker, clear & warm, moderate pace"},
+        {"id": "deep_expressive_male", "name": "Deep Expressive Male", "description": "Male speaker, deep & expressive"},
+        {"id": "slow_soft_female", "name": "Slow Soft Female", "description": "Female speaker, soft & slow"},
+    ]
+
+
+@app.get("/voices/preview")
+def get_voice_preview(voice_id: str) -> FileResponse:
+    import tempfile
+    from app.services.tts.kokoro import synthesize_english
+
+    temp_dir = Path(tempfile.gettempdir())
+    preview_path = temp_dir / f"preview_{voice_id}.wav"
+
+    text = f"This is a preview of the {voice_id.replace('af_', 'female ').replace('am_', 'male ').replace('bf_', 'British female ').replace('bm_', 'British male ')} voice."
+    try:
+        synthesize_english(text, preview_path, voice=voice_id)
+        return FileResponse(preview_path, media_type="audio/wav")
+    except Exception as e:
+        raise HTTPException(500, f"Preview failed: {str(e)}")
+

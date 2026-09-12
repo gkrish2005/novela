@@ -19,12 +19,13 @@ def _get_pipeline():
     return _pipeline
 
 
-def synthesize_english(text: str, output_path: Path, voice: str = "af_heart") -> None:
+def synthesize_english(text: str, output_path: Path, voice: str | None = None) -> None:
     pipeline = _get_pipeline()
     segments: list[np.ndarray] = []
     sample_rate = 24000
+    voice_name = voice or "af_heart"
 
-    for _, _, audio in pipeline(text, voice=voice, speed=1.0):
+    for _, _, audio in pipeline(text, voice=voice_name, speed=1.0):
         if audio is not None and len(audio) > 0:
             segments.append(np.asarray(audio, dtype=np.float32))
 

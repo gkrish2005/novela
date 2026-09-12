@@ -90,7 +90,7 @@ def test_resume_skips_completed_chunks_after_simulated_crash(job_env, monkeypatc
   synthesize_calls: list[int] = []
   crash_state = {"armed": True}
 
-  def mock_synthesize(text: str, lang: str, output_path: Path) -> str:
+  def mock_synthesize(text: str, lang: str, output_path: Path, **kwargs) -> str:
     chunk_idx = int(output_path.stem.replace("chunk", ""))
     synthesize_calls.append(chunk_idx)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -150,7 +150,7 @@ def test_recover_interrupted_jobs_resumes_latest_per_book(job_env, monkeypatch):
   engine = job_env
   book_id, job_id, _ = _seed_book_with_chunks(engine, chunk_count=1)
 
-  def _quick_synth(text: str, lang: str, output_path: Path) -> str:
+  def _quick_synth(text: str, lang: str, output_path: Path, **kwargs) -> str:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_bytes(b"wav")
     return "kokoro"

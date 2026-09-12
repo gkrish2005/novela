@@ -1,0 +1,260 @@
+{
+  "document_id": "006_alices_adventures",
+  "title": "Alice's adventures in Wonderland",
+  "author": "Carroll, Lewis, 1832-1898",
+  "total_pages": 226,
+  "raw_char_count": 207785,
+  "extraction_status": "native_text",
+  "parse_time_seconds": 1.93,
+  "ms_per_page": 8.52,
+  "pages_per_sec": 117.37,
+  "validation_report": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [],
+    "leaf_nodes": 9,
+    "text_loss_rate": 0.0,
+    "text_duplication_rate": 0.002,
+    "raw_char_count": 207785
+  },
+  "toc_reconciliation": {},
+  "semantic_nodes_count": 0,
+  "fallback_partitions_count": 9,
+  "document_tree": {
+    "id": "root",
+    "parent_id": null,
+    "node_type": "document",
+    "title": "Alice's adventures in Wonderland",
+    "ordinal": null,
+    "page_start": 1,
+    "page_end": 226,
+    "char_start": 0,
+    "char_end": 208171,
+    "text_length": 0,
+    "confidence": 1.0,
+    "detection_method": "heuristic",
+    "uncertain": false,
+    "uncertainty_reasons": [],
+    "children": [
+      {
+        "id": "sec_1",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 1",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 0,
+        "char_end": 19168,
+        "text_length": 19168,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_2",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 2",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 19170,
+        "char_end": 47802,
+        "text_length": 28632,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_3",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 3",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 47804,
+        "char_end": 80034,
+        "text_length": 32230,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_4",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 4",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 80036,
+        "char_end": 110049,
+        "text_length": 30013,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_5",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 5",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 110051,
+        "char_end": 140731,
+        "text_length": 30680,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_6",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 6",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 140733,
+        "char_end": 170985,
+        "text_length": 30252,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_7",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 7",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 170987,
+        "char_end": 197163,
+        "text_length": 26176,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_8",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 8",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 197165,
+        "char_end": 208116,
+        "text_length": 10951,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_9",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 9",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 226,
+        "char_start": 208118,
+        "char_end": 208171,
+        "text_length": 53,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      }
+    ]
+  },
+  "narratable_chapters_count": 9,
+  "narratable_chapters": [
+    {
+      "title": "Section 1",
+      "text_length": 19168,
+      "preview": "r .  aX <p  lX o-\"   (J\\^> - %  \" '*<. /'V *   7  , V  r ^vT!|  • ^7  v,   ° ^ ^ ^ -  W   %J   * o>'   <%> o “ c$<^ ' \\>"
+    },
+    {
+      "title": "Section 2",
+      "text_length": 28632,
+      "preview": "ther:   she   felt   a little   nervous   about   this;   “for it   might  end,   you   know,”   said   Alice   to   her"
+    },
+    {
+      "title": "Section 3",
+      "text_length": 32230,
+      "preview": "soon   as   it  was   quite   out   of   sight. And   an   old   Crab   took the   opportunity   of   saying   to   her "
+    },
+    {
+      "title": "Section 4",
+      "text_length": 30013,
+      "preview": "Advice   from   a   Caterpillar.  found   to   be   nothing  but   the   tops   of  the   trees   under  which she   had"
+    },
+    {
+      "title": "Section 5",
+      "text_length": 30680,
+      "preview": "“Have   you   guessed   the   riddle   yet?”   the   Hatter   said,  turning   to   Alice   again.  [ 95  ]  A  Mad   T "
+    },
+    {
+      "title": "Section 6",
+      "text_length": 30252,
+      "preview": "the   kitchen.  “When   I’m   a   Duchess,”   she   said   to   herself   (not   in   a  very   hopeful   tone,   though"
+    },
+    {
+      "title": "Section 7",
+      "text_length": 26176,
+      "preview": "tastes! Sing   her  ‘  Turtle   Soup,’   will   you,   old   fellow?” The  Mock   Turtle   sighed   deeply,   and   bega"
+    },
+    {
+      "title": "Section 8",
+      "text_length": 10951,
+      "preview": "“Then   the   words   don’t   fit   you,”   said   the   King   looking round   the   court   with   a   smile. There  w"
+    },
+    {
+      "title": "Section 9",
+      "text_length": 53,
+      "preview": "i O  'I N   0   ° A© O, * ,  XV   sS * <4? S>i  ,I  -"
+    }
+  ]
+}

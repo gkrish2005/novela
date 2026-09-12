@@ -16,6 +16,7 @@ from app.services import audio as audio_svc
 from app.services.aligner import align_audio, fallback_word_timestamps
 from app.services.chunker import chunk_text
 from app.services.language import detect_language, resolve_chunk_language
+from app.services.parser import _normalize_heading_for_tts
 from app.services.tts.router import synthesize
 
 _executor_lock = threading.Lock()
@@ -90,7 +91,9 @@ def _process_chunk(
 
     wav = config.AUDIO_DIR / f"book{book_id}" / f"ch{chapter.id}" / f"chunk{chunk.index}.wav"
     wav.parent.mkdir(parents=True, exist_ok=True)
-    engine_name = synthesize(chunk.text, lang, wav)
+    
+    spoken = chunk.spoken_text or _normalize_heading_for_tts(chunk.text)
+    engine_name = synthesize(spoken, lang, wav, voice_id=book.voice_id, voice_prompt=book.voice_prompt)
     chunk.tts_engine = engine_name
     chunk.audio_path = str(wav)
     chunk.status = "ready"
@@ -195,7 +198,7 @@ def process_book(book_id: int, job_id: int) -> None:
                                 chapter_id=chapter.id,
                                 index=i,
                                 text=t,
-                                spoken_text=t,
+                                spoken_text=_normalize_heading_for_tts(t),
                                 language=lang,
                                 status="pending",
                             )
@@ -346,6 +349,8 @@ def import_parsed_book(
     parsed,
     source_path: Path,
     language_override: str | None = None,
+    voice_id: str | None = None,
+    voice_prompt: str | None = None,
 ) -> int:
     from app.services.cover import generate_placeholder, save_cover_bytes
     from app.services.language import detect_book_language
@@ -360,6 +365,8 @@ def import_parsed_book(
             source_file_path=str(source_path),
             language=detected,
             cover_source="extracted" if parsed.cover_bytes else "generated",
+            voice_id=voice_id,
+            voice_prompt=voice_prompt,
         )
         session.add(book)
         session.commit()
@@ -404,7 +411,7 @@ def import_parsed_book(
                         chapter_id=chapter.id,
                         index=j,
                         text=text,
-                        spoken_text=text,
+                        spoken_text=_normalize_heading_for_tts(text),
                         language=lang,
                         status="pending",
                     )

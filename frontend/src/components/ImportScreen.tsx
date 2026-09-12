@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
 
 type Props = {
@@ -12,12 +12,59 @@ export function ImportScreen({ onImported }: Props) {
   const [language, setLanguage] = useState<"auto" | "en" | "hi">("auto");
   const [detected, setDetected] = useState<string | null>(null);
 
+  const [voices, setVoices] = useState<string[]>([]);
+  const [hindiPresets, setHindiPresets] = useState<{ id: string; name: string; description: string }[]>([]);
+  const [selectedVoiceId, setSelectedVoiceId] = useState<string>("");
+  const [selectedPresetId, setSelectedPresetId] = useState<string>("");
+  const [previewingId, setPreviewingId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    api.listVoices()
+      .then((res) => {
+        setVoices(res.voices);
+        if (res.voices.length > 0) setSelectedVoiceId(res.voices[0]);
+      })
+      .catch(() => {});
+    api.listHindiPresets()
+      .then((res) => {
+        setHindiPresets(res);
+        if (res.length > 0) setSelectedPresetId(res[0].id);
+      })
+      .catch(() => {});
+  }, []);
+
+  const playPreview = (voiceId: string) => {
+    if (previewingId === voiceId) {
+      audioRef.current?.pause();
+      setPreviewingId(null);
+    } else {
+      audioRef.current?.pause();
+      const url = api.voicePreviewUrl(voiceId);
+      const audio = new Audio(url);
+      audio.onended = () => setPreviewingId(null);
+      audioRef.current = audio;
+      audio.play().catch(() => setPreviewingId(null));
+      setPreviewingId(voiceId);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      audioRef.current?.pause();
+    };
+  }, []);
+
+  const isTauriEnv = typeof window !== "undefined" && (window as any).__TAURI_INTERNALS__ !== undefined;
+
   const handleFile = async (file: File) => {
     setLoading(true);
     setError("");
     try {
       const lang = language === "auto" ? undefined : language;
-      const result = await api.importFile(file, lang);
+      const vId = language !== "hi" ? selectedVoiceId : undefined;
+      const vPrompt = language !== "en" ? selectedPresetId : undefined;
+      const result = await api.importFile(file, lang, vId, vPrompt);
       setDetected(result.detected_language);
       onImported(result.book_id);
     } catch (e) {
@@ -26,6 +73,82 @@ export function ImportScreen({ onImported }: Props) {
       setLoading(false);
     }
   };
+
+  const handleLocalFile = async (path: string) => {
+    setLoading(true);
+    setError("");
+    try {
+      const lang = language === "auto" ? undefined : language;
+      const vId = language !== "hi" ? selectedVoiceId : undefined;
+      const vPrompt = language !== "en" ? selectedPresetId : undefined;
+      const result = await api.importLocalFile(path, lang, vId, vPrompt);
+      setDetected(result.detected_language);
+      onImported(result.book_id);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Import failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!isTauriEnv) return;
+
+    let active = true;
+    let unlistenDrop: any = null;
+    let unlistenOver: any = null;
+    let unlistenLeave: any = null;
+
+    import("@tauri-apps/api/event").then(({ listen }) => {
+      if (!active) return;
+
+      listen<any>("tauri://drag-drop", (event) => {
+        setDragging(false);
+        const filePath = event.payload.paths?.[0];
+        if (filePath) {
+          handleLocalFile(filePath);
+        }
+      }).then((fn) => { unlistenDrop = fn; });
+
+      listen<any>("tauri://drag-over", () => {
+        setDragging(true);
+      }).then((fn) => { unlistenOver = fn; });
+
+      listen<any>("tauri://drag-leave", () => {
+        setDragging(false);
+      }).then((fn) => { unlistenLeave = fn; });
+    });
+
+    return () => {
+      active = false;
+      if (unlistenDrop) unlistenDrop();
+      if (unlistenOver) unlistenOver();
+      if (unlistenLeave) unlistenLeave();
+    };
+  }, [language, selectedVoiceId, selectedPresetId]);
+
+
+  const handleTauriFilePicker = async () => {
+    try {
+      const { open } = await import("@tauri-apps/plugin-dialog");
+      const filePath = await open({
+        multiple: false,
+        filters: [
+          {
+            name: "Books",
+            extensions: ["pdf", "epub", "txt", "docx", "md"]
+          }
+        ]
+      });
+      if (filePath && typeof filePath === "string") {
+        await handleLocalFile(filePath);
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : typeof err === "string" ? err : JSON.stringify(err);
+      setError(msg);
+    }
+  };
+
 
   return (
     <div className="import-screen">
@@ -56,6 +179,71 @@ export function ImportScreen({ onImported }: Props) {
           </div>
         </div>
 
+        {language !== "hi" && voices.length > 0 && (
+          <div className="voice-field" style={{ marginBottom: "1.25rem" }}>
+            <span className="lang-label">English voice</span>
+            <div className="voice-picker-row" style={{ display: "flex", gap: "0.5rem" }}>
+              <select
+                value={selectedVoiceId}
+                onChange={(e) => setSelectedVoiceId(e.target.value)}
+                className="voice-select"
+                style={{
+                  flex: 1,
+                  background: "var(--bg-app)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "6px",
+                  color: "var(--text-primary)",
+                  padding: "0.5rem",
+                  fontFamily: "inherit"
+                }}
+              >
+                {voices.map((v) => (
+                  <option key={v} value={v}>
+                    {v}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                className="btn-ghost"
+                onClick={() => playPreview(selectedVoiceId)}
+                style={{ padding: "0.5rem 0.75rem", fontSize: "0.85rem", whiteSpace: "nowrap" }}
+              >
+                {previewingId === selectedVoiceId ? "⏸ Stop" : "▶ Preview"}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {language !== "en" && hindiPresets.length > 0 && (
+          <div className="voice-field" style={{ marginBottom: "1.5rem" }}>
+            <span className="lang-label">Hindi voice preset</span>
+            <select
+              value={selectedPresetId}
+              onChange={(e) => setSelectedPresetId(e.target.value)}
+              className="voice-select"
+              style={{
+                width: "100%",
+                background: "var(--bg-app)",
+                border: "1px solid var(--border)",
+                borderRadius: "6px",
+                color: "var(--text-primary)",
+                padding: "0.5rem",
+                fontFamily: "inherit"
+              }}
+            >
+              {hindiPresets.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.name}
+                </option>
+              ))}
+            </select>
+            <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)", display: "block", marginTop: "0.25rem" }}>
+              {hindiPresets.find((p) => p.id === selectedPresetId)?.description}
+            </span>
+          </div>
+        )}
+
         <div
           className={`drop-zone ${dragging ? "dragging" : ""}`}
           onDragOver={(e) => {
@@ -71,20 +259,32 @@ export function ImportScreen({ onImported }: Props) {
           }}
         >
           <p>Drop a PDF, TXT, EPUB, or DOCX here</p>
-          <label className="btn-primary file-label">
-            {loading ? "Importing…" : "Choose file"}
-            <input
-              type="file"
-              hidden
-              accept=".pdf,.txt,.md,.epub,.docx"
+          {isTauriEnv ? (
+            <button
+              className="btn-primary file-label"
               disabled={loading}
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) handleFile(file);
-              }}
-            />
-          </label>
+              onClick={handleTauriFilePicker}
+              style={{ display: "inline-block" }}
+            >
+              {loading ? "Importing…" : "Choose file"}
+            </button>
+          ) : (
+            <label className="btn-primary file-label">
+              {loading ? "Importing…" : "Choose file"}
+              <input
+                type="file"
+                hidden
+                accept=".pdf,.txt,.md,.epub,.docx"
+                disabled={loading}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) handleFile(file);
+                }}
+              />
+            </label>
+          )}
         </div>
+
 
         {error && <p className="error">{error}</p>}
       </div>

@@ -1,0 +1,56 @@
+{
+  "snapshot_metadata": {
+    "version": "3.1.0-human-verified",
+    "snapshot_id": "phase3a_human_verified_baseline",
+    "created_at": "2026-09-12T14:50:00+05:30",
+    "git_commit": "06bed8084bf7f72f94d77fd8c4cf171cd8b645e3",
+    "pipeline_state": "Phase 3A Post-Adjudication Baseline (Unmodified Parser Engine)",
+    "ground_truth_status": "HUMAN VERIFIED CANONICAL GROUND TRUTH",
+    "human_verified": true,
+    "methodology": "Physical PyMuPDF PDF page inspection across all 10 corpus documents. Scored Volume->Book for Les Misérables (chapters deferred), Volume 1 Ch 1-60 for Moby-Dick, 3-zone architecture for The Iliad, Letters I-IV for Frankenstein, Middlemarch deferred under extraction_limitation."
+  },
+  "ground_truth_inventory": {
+    "total_documents": 10,
+    "human_verified_documents": 9,
+    "extraction_limitation_documents": 1,
+    "total_nodes": 286,
+    "human_verified_scored_nodes": 276,
+    "deferred_limitation_nodes": 10,
+    "disputed_nodes": 0
+  },
+  "aggregate_metrics": {
+    "total_documents": 10,
+    "active_benchmark_documents": 9,
+    "extraction_limitation_documents": 1,
+    "total_physical_pages": 4677,
+    "total_raw_characters": 8435163,
+    "heading_detection": {
+      "total_expected_canonical_nodes": 276,
+      "true_positives": 151,
+      "false_positives": 104,
+      "false_negatives": 125,
+      "out_of_scope_deferred_nodes": 31,
+      "precision": 0.5922,
+      "recall": 0.5471,
+      "f1_score": 0.5687
+    },
+    "classification": {
+      "total_evaluated_nodes": 151,
+      "correct_classifications": 139,
+      "accuracy": 0.9205
+    },
+    "hierarchy": {
+      "status": "NOT YET VALIDATED",
+      "parent_accuracy": null,
+      "containment_accuracy": null,
+      "depth_accuracy": null
+    }
+  },
+  "failure_taxonomy_summary": {
+    "category_a_current_parser_defect_instances": 151,
+    "category_b_historical_v1_gt_corrections": 89,
+    "category_c_scope_granularity_mismatches": 36,
+    "category_d_extraction_limitations": 10,
+    "category_e_ambiguous_cases_adjudicated": 43
+  }
+}

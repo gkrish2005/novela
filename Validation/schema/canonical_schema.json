@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CanonicalGroundTruthSchema",
+  "description": "Schema for machine-curated and human-verified canonical document structure ground truth in Novela benchmark corpus.",
+  "type": "object",
+  "required": [
+    "document_id",
+    "title",
+    "source_file",
+    "human_verified",
+    "verification_coverage",
+    "scored_levels",
+    "deferred_levels",
+    "nodes"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "description": "Unique identifier for the benchmark document (e.g. 001_middlemarch)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Standard work title"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author name"
+    },
+    "source_file": {
+      "type": "string",
+      "description": "Filename of the source PDF in validation/Corpus"
+    },
+    "edition_notes": {
+      "type": "string",
+      "description": "Edition-specific metadata, publisher, year, or visual notes on the source PDF"
+    },
+    "human_verified": {
+      "type": "boolean",
+      "description": "Must be false until actual human review has been conducted across the document",
+      "default": false
+    },
+    "verification_coverage": {
+      "type": "string",
+      "description": "Summary of verification scope (e.g. candidate_machine_curated, human_verified_partial, human_verified_full)"
+    },
+    "structural_notes": {
+      "type": "string",
+      "description": "Edition-specific structural notes and discrepancies from generic reference editions"
+    },
+    "scored_levels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Structural levels actively evaluated in current benchmark metrics (e.g. ['volume', 'book'])"
+    },
+    "deferred_levels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Structural levels recognized in the work but deferred from active scoring (e.g. ['chapter'])"
+    },
+    "benchmark_status": {
+      "type": "string",
+      "enum": ["active", "extraction_limitation", "deferred_evaluation", "review_required"],
+      "description": "Operational status of this document within the automated benchmark runner"
+    },
+    "nodes": {
+      "type": "array",
+      "description": "Hierarchical list of canonical structural nodes present in this edition",
+      "items": {
+        "$ref": "#/definitions/CanonicalNode"
+      }
+    }
+  },
+  "definitions": {
+    "CanonicalNode": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "title",
+        "type",
+        "level",
+        "order",
+        "verification_status"
+      ],
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "description": "Deterministic identifier for the node (e.g. node_vol1_bk2)"
+        },
+        "parent_id": {
+          "type": ["string", "null"],
+          "description": "node_id of the parent structural node, or null for top-level nodes"
+        },
+        "title": {
+          "type": "string",
+          "description": "Canonical title or heading label expected in the document"
+        },
+        "type": {
+          "type": "string",
+          "description": "Structural type (e.g. volume, book, chapter, letter, preface, introduction, epilogue, front_matter, back_matter, apparatus, note)"
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Hierarchy level depth (1 for Volume/Part, 2 for Book/Letter, 3 for Chapter, etc.)"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Sequential reading order index in the document"
+        },
+        "page_start": {
+          "type": ["integer", "null"],
+          "description": "1-indexed starting PDF page number if known or candidate"
+        },
+        "page_end": {
+          "type": ["integer", "null"],
+          "description": "1-indexed ending PDF page number if known or candidate"
+        },
+        "subtitles": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional subtitles or descriptive titles associated with the heading"
+        },
+        "verification_status": {
+          "type": "string",
+          "enum": ["candidate", "human_verified", "disputed", "not_applicable"],
+          "description": "Verification status of this specific node"
+        },
+        "verification_notes": {
+          "type": "string",
+          "description": "Detailed notes on how the node was identified, ambiguous aspects, or review guidance"
+        },
+        "benchmark_status": {
+          "type": "string",
+          "enum": ["scored", "deferred", "excluded"],
+          "description": "Whether this specific node is evaluated in current benchmark metrics",
+          "default": "scored"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CanonicalNode"
+          },
+          "description": "Nested child nodes"
+        }
+      }
+    }
+  }
+}

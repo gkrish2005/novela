@@ -1,0 +1,209 @@
+{
+  "document_id": "006_alices_adventures",
+  "title": "Alice's Adventures in Wonderland",
+  "author": "Lewis Carroll",
+  "source_file": "alicesadventures00carr_20.pdf",
+  "edition_notes": "Macmillan illustrated edition (226 pages). Contains 12 Chapters.",
+  "human_verified": true,
+  "verification_coverage": "human_verified_full",
+  "structural_notes": "Single-tier chapter structure (12 chapters). Parser dropped chapters due to dropped capital initial line typography.",
+  "scored_levels": [
+    "chapter"
+  ],
+  "deferred_levels": [],
+  "benchmark_status": "active",
+  "nodes": [
+    {
+      "node_id": "alice_ch_1",
+      "parent_id": null,
+      "title": "Chapter 1: Down the Rabbit-Hole",
+      "type": "chapter",
+      "level": 1,
+      "order": 1,
+      "page_start": 13,
+      "page_end": null,
+      "subtitles": [
+        "Down the Rabbit-Hole"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 1 starting on page 13. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_2",
+      "parent_id": null,
+      "title": "Chapter 2: The Pool of Tears",
+      "type": "chapter",
+      "level": 1,
+      "order": 2,
+      "page_start": 27,
+      "page_end": null,
+      "subtitles": [
+        "The Pool of Tears"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 2 starting on page 27. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_3",
+      "parent_id": null,
+      "title": "Chapter 3: A Caucus-Race and a Long Tale",
+      "type": "chapter",
+      "level": 1,
+      "order": 3,
+      "page_start": 41,
+      "page_end": null,
+      "subtitles": [
+        "A Caucus-Race and a Long Tale"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 3 starting on page 41. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_4",
+      "parent_id": null,
+      "title": "Chapter 4: The Rabbit Sends in a Little Bill",
+      "type": "chapter",
+      "level": 1,
+      "order": 4,
+      "page_start": 55,
+      "page_end": null,
+      "subtitles": [
+        "The Rabbit Sends in a Little Bill"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 4 starting on page 55. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_5",
+      "parent_id": null,
+      "title": "Chapter 5: Advice from a Caterpillar",
+      "type": "chapter",
+      "level": 1,
+      "order": 5,
+      "page_start": 73,
+      "page_end": null,
+      "subtitles": [
+        "Advice from a Caterpillar"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 5 starting on page 73. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_6",
+      "parent_id": null,
+      "title": "Chapter 6: Pig and Pepper",
+      "type": "chapter",
+      "level": 1,
+      "order": 6,
+      "page_start": 91,
+      "page_end": null,
+      "subtitles": [
+        "Pig and Pepper"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 6 starting on page 91. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_7",
+      "parent_id": null,
+      "title": "Chapter 7: A Mad Tea-Party",
+      "type": "chapter",
+      "level": 1,
+      "order": 7,
+      "page_start": 111,
+      "page_end": null,
+      "subtitles": [
+        "A Mad Tea-Party"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 7 starting on page 111. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_8",
+      "parent_id": null,
+      "title": "Chapter 8: The Queen's Croquet-Ground",
+      "type": "chapter",
+      "level": 1,
+      "order": 8,
+      "page_start": 129,
+      "page_end": null,
+      "subtitles": [
+        "The Queen's Croquet-Ground"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 8 starting on page 129. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_9",
+      "parent_id": null,
+      "title": "Chapter 9: The Mock Turtle's Story",
+      "type": "chapter",
+      "level": 1,
+      "order": 9,
+      "page_start": 147,
+      "page_end": null,
+      "subtitles": [
+        "The Mock Turtle's Story"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 9 starting on page 147. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_10",
+      "parent_id": null,
+      "title": "Chapter 10: The Lobster Quadrille",
+      "type": "chapter",
+      "level": 1,
+      "order": 10,
+      "page_start": 167,
+      "page_end": null,
+      "subtitles": [
+        "The Lobster Quadrille"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 10 starting on page 167. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_11",
+      "parent_id": null,
+      "title": "Chapter 11: Who Stole the Tarts?",
+      "type": "chapter",
+      "level": 1,
+      "order": 11,
+      "page_start": 185,
+      "page_end": null,
+      "subtitles": [
+        "Who Stole the Tarts?"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 11 starting on page 185. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "alice_ch_12",
+      "parent_id": null,
+      "title": "Chapter 12: Alice's Evidence",
+      "type": "chapter",
+      "level": 1,
+      "order": 12,
+      "page_start": 199,
+      "page_end": null,
+      "subtitles": [
+        "Alice's Evidence"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 12 starting on page 199. Heading has large dropped capital initial line.",
+      "benchmark_status": "scored"
+    }
+  ]
+}

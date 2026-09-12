@@ -1,0 +1,625 @@
+{
+  "document_id": "007_count_of_monte_cristo",
+  "title": "The Count of Monte-Cristo (Volume 1)",
+  "author": "Alexandre Dumas",
+  "source_file": "countofmontecris01duma.pdf",
+  "edition_notes": "Walter Scott edition (Volume 1, 360 pages). Contains Chapters 1 to 38.",
+  "human_verified": true,
+  "verification_coverage": "human_verified_full",
+  "structural_notes": "Source PDF is Volume 1 only (38 chapters). Standard full work contains 117 chapters across multiple volumes; GT is scoped specifically to the 38 chapters present in this benchmark PDF.",
+  "scored_levels": [
+    "chapter"
+  ],
+  "deferred_levels": [],
+  "benchmark_status": "active",
+  "nodes": [
+    {
+      "node_id": "cmc_ch_1",
+      "parent_id": null,
+      "title": "Chapter 1: Marseilles\u2014The Arrival",
+      "type": "chapter",
+      "level": 1,
+      "order": 1,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Marseilles\u2014The Arrival"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 1 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_2",
+      "parent_id": null,
+      "title": "Chapter 2: Father and Son",
+      "type": "chapter",
+      "level": 1,
+      "order": 2,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Father and Son"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 2 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_3",
+      "parent_id": null,
+      "title": "Chapter 3: The Catalans",
+      "type": "chapter",
+      "level": 1,
+      "order": 3,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Catalans"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 3 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_4",
+      "parent_id": null,
+      "title": "Chapter 4: Conspiracy",
+      "type": "chapter",
+      "level": 1,
+      "order": 4,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Conspiracy"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 4 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_5",
+      "parent_id": null,
+      "title": "Chapter 5: The Marriage-Feast",
+      "type": "chapter",
+      "level": 1,
+      "order": 5,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Marriage-Feast"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 5 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_6",
+      "parent_id": null,
+      "title": "Chapter 6: The Deputy Procureur du Roi",
+      "type": "chapter",
+      "level": 1,
+      "order": 6,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Deputy Procureur du Roi"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 6 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_7",
+      "parent_id": null,
+      "title": "Chapter 7: The Examination",
+      "type": "chapter",
+      "level": 1,
+      "order": 7,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Examination"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 7 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_8",
+      "parent_id": null,
+      "title": "Chapter 8: The Ch\u00e2teau d'If",
+      "type": "chapter",
+      "level": 1,
+      "order": 8,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Ch\u00e2teau d'If"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 8 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_9",
+      "parent_id": null,
+      "title": "Chapter 9: The Evening of the Betrothal",
+      "type": "chapter",
+      "level": 1,
+      "order": 9,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Evening of the Betrothal"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 9 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_10",
+      "parent_id": null,
+      "title": "Chapter 10: The King's Closet",
+      "type": "chapter",
+      "level": 1,
+      "order": 10,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The King's Closet"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 10 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_11",
+      "parent_id": null,
+      "title": "Chapter 11: The Corsican Ogre",
+      "type": "chapter",
+      "level": 1,
+      "order": 11,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Corsican Ogre"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 11 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_12",
+      "parent_id": null,
+      "title": "Chapter 12: Father and Son",
+      "type": "chapter",
+      "level": 1,
+      "order": 12,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Father and Son"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 12 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_13",
+      "parent_id": null,
+      "title": "Chapter 13: The Hundred Days",
+      "type": "chapter",
+      "level": 1,
+      "order": 13,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Hundred Days"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 13 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_14",
+      "parent_id": null,
+      "title": "Chapter 14: The Two Prisoners",
+      "type": "chapter",
+      "level": 1,
+      "order": 14,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Two Prisoners"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 14 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_15",
+      "parent_id": null,
+      "title": "Chapter 15: Number 34 and Number 27",
+      "type": "chapter",
+      "level": 1,
+      "order": 15,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Number 34 and Number 27"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 15 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_16",
+      "parent_id": null,
+      "title": "Chapter 16: A Learned Italian",
+      "type": "chapter",
+      "level": 1,
+      "order": 16,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "A Learned Italian"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 16 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_17",
+      "parent_id": null,
+      "title": "Chapter 17: The Abb\u00e9's Chamber",
+      "type": "chapter",
+      "level": 1,
+      "order": 17,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Abb\u00e9's Chamber"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 17 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_18",
+      "parent_id": null,
+      "title": "Chapter 18: The Treasure",
+      "type": "chapter",
+      "level": 1,
+      "order": 18,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Treasure"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 18 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_19",
+      "parent_id": null,
+      "title": "Chapter 19: The Third Attack",
+      "type": "chapter",
+      "level": 1,
+      "order": 19,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Third Attack"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 19 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_20",
+      "parent_id": null,
+      "title": "Chapter 20: The Cemetery of the Ch\u00e2teau d'If",
+      "type": "chapter",
+      "level": 1,
+      "order": 20,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Cemetery of the Ch\u00e2teau d'If"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 20 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_21",
+      "parent_id": null,
+      "title": "Chapter 21: The Isle of Tiboulen",
+      "type": "chapter",
+      "level": 1,
+      "order": 21,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Isle of Tiboulen"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 21 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_22",
+      "parent_id": null,
+      "title": "Chapter 22: The Smugglers",
+      "type": "chapter",
+      "level": 1,
+      "order": 22,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Smugglers"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 22 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_23",
+      "parent_id": null,
+      "title": "Chapter 23: The Isle of Monte-Cristo",
+      "type": "chapter",
+      "level": 1,
+      "order": 23,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Isle of Monte-Cristo"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 23 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_24",
+      "parent_id": null,
+      "title": "Chapter 24: The Secret Cave",
+      "type": "chapter",
+      "level": 1,
+      "order": 24,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Secret Cave"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 24 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_25",
+      "parent_id": null,
+      "title": "Chapter 25: The Unknown",
+      "type": "chapter",
+      "level": 1,
+      "order": 25,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Unknown"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 25 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_26",
+      "parent_id": null,
+      "title": "Chapter 26: The Pont du Gard",
+      "type": "chapter",
+      "level": 1,
+      "order": 26,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Pont du Gard"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 26 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_27",
+      "parent_id": null,
+      "title": "Chapter 27: The Recital",
+      "type": "chapter",
+      "level": 1,
+      "order": 27,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Recital"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 27 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_28",
+      "parent_id": null,
+      "title": "Chapter 28: The Prison Register",
+      "type": "chapter",
+      "level": 1,
+      "order": 28,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Prison Register"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 28 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_29",
+      "parent_id": null,
+      "title": "Chapter 29: The House of Morrel and Son",
+      "type": "chapter",
+      "level": 1,
+      "order": 29,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The House of Morrel and Son"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 29 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_30",
+      "parent_id": null,
+      "title": "Chapter 30: The Fifth of September",
+      "type": "chapter",
+      "level": 1,
+      "order": 30,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Fifth of September"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 30 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_31",
+      "parent_id": null,
+      "title": "Chapter 31: Italy\u2014Sinbad the Sailor",
+      "type": "chapter",
+      "level": 1,
+      "order": 31,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Italy\u2014Sinbad the Sailor"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 31 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_32",
+      "parent_id": null,
+      "title": "Chapter 32: The Awakening",
+      "type": "chapter",
+      "level": 1,
+      "order": 32,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Awakening"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 32 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_33",
+      "parent_id": null,
+      "title": "Chapter 33: Roman Bandits",
+      "type": "chapter",
+      "level": 1,
+      "order": 33,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "Roman Bandits"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 33 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_34",
+      "parent_id": null,
+      "title": "Chapter 34: The Colosseum",
+      "type": "chapter",
+      "level": 1,
+      "order": 34,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Colosseum"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 34 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_35",
+      "parent_id": null,
+      "title": "Chapter 35: La Mazzolata",
+      "type": "chapter",
+      "level": 1,
+      "order": 35,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "La Mazzolata"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 35 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_36",
+      "parent_id": null,
+      "title": "Chapter 36: The Carnival at Rome",
+      "type": "chapter",
+      "level": 1,
+      "order": 36,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Carnival at Rome"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 36 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_37",
+      "parent_id": null,
+      "title": "Chapter 37: The Catacombs of Saint Sebastian",
+      "type": "chapter",
+      "level": 1,
+      "order": 37,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Catacombs of Saint Sebastian"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 37 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "cmc_ch_38",
+      "parent_id": null,
+      "title": "Chapter 38: The Compact",
+      "type": "chapter",
+      "level": 1,
+      "order": 38,
+      "page_start": null,
+      "page_end": null,
+      "subtitles": [
+        "The Compact"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 38 in Volume 1 edition.",
+      "benchmark_status": "scored"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "document_id": "005_sherlock_holmes",
+  "title": "The adventures of Sherlock Holmes",
+  "author": "Doyle, Arthur Conan, Sir, 1859-1930",
+  "total_pages": 332,
+  "raw_char_count": 719728,
+  "extraction_status": "native_text",
+  "parse_time_seconds": 63.25,
+  "ms_per_page": 190.5,
+  "pages_per_sec": 5.25,
+  "validation_report": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [],
+    "leaf_nodes": 9,
+    "text_loss_rate": 0.0,
+    "text_duplication_rate": 0.0,
+    "raw_char_count": 719728
+  },
+  "toc_reconciliation": {},
+  "semantic_nodes_count": 0,
+  "fallback_partitions_count": 9,
+  "document_tree": {
+    "id": "root",
+    "parent_id": null,
+    "node_type": "document",
+    "title": "The adventures of Sherlock Holmes",
+    "ordinal": null,
+    "page_start": 1,
+    "page_end": 332,
+    "char_start": 0,
+    "char_end": 720292,
+    "text_length": 0,
+    "confidence": 1.0,
+    "detection_method": "heuristic",
+    "uncertain": false,
+    "uncertainty_reasons": [],
+    "children": [
+      {
+        "id": "sec_1",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 1",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 0,
+        "char_end": 83718,
+        "text_length": 83718,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_2",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 2",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 83720,
+        "char_end": 173759,
+        "text_length": 90039,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_3",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 3",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 173761,
+        "char_end": 263388,
+        "text_length": 89627,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_4",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 4",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 263390,
+        "char_end": 351941,
+        "text_length": 88551,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_5",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 5",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 351943,
+        "char_end": 444616,
+        "text_length": 92673,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_6",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 6",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 444618,
+        "char_end": 534553,
+        "text_length": 89935,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_7",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 7",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 534555,
+        "char_end": 626375,
+        "text_length": 91820,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_8",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 8",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 626377,
+        "char_end": 720229,
+        "text_length": 93852,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_9",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 9",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 332,
+        "char_start": 720231,
+        "char_end": 720292,
+        "text_length": 61,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      }
+    ]
+  },
+  "narratable_chapters_count": 9,
+  "narratable_chapters": [
+    {
+      "title": "Section 1",
+      "text_length": 83718,
+      "preview": "DVEiMTLfilEa op Mm  i(^^ w  • V  I  i^^.  THE   ADVENTURES   OF   SHERLOCK   HOLMES.  A   STUDY IN SCARLET.  THE SIGN OF"
+    },
+    {
+      "title": "Section 2",
+      "text_length": 90039,
+      "preview": "Sherlock   Holmes   and I surveyed this curt   announcement   and  the rueful face behind it, until the comical side of "
+    },
+    {
+      "title": "Section 3",
+      "text_length": 89627,
+      "preview": "came   back   alive.  *'From   Hatherley   Farmhouse   to   the   Boscombe   Pool   is   a   quarter  of   a   mile,   a"
+    },
+    {
+      "title": "Section 4",
+      "text_length": 88551,
+      "preview": "that   you   may   be   in safety. And   yet   you cannot   guard   yourself too  closely.\"  \"   I   am   armed.\"  \"   T"
+    },
+    {
+      "title": "Section 5",
+      "text_length": 92673,
+      "preview": "down   Tottenham   Court-road. In   front of   him   he   saw,   in the   gas-  light,   a   tallish   man,   walking   "
+    },
+    {
+      "title": "Section 6",
+      "text_length": 89935,
+      "preview": "he tested the hinges,   but   they   were   of   solid iron,   built firmly into  the massive masonry.  '\"'   Hum !   \" "
+    },
+    {
+      "title": "Section 7",
+      "text_length": 91820,
+      "preview": "Vere St. Simon, second son of the Duke of Balmoral — Hum ! Arms :   Azure,   three caltrops in chief over   a fess sable"
+    },
+    {
+      "title": "Section 8",
+      "text_length": 93852,
+      "preview": "\"   That is it   on   the   dressing-table.\"  Sherlock   Holmes   took it   up   and   opened   the   bureau. \"   It   i"
+    },
+    {
+      "title": "Section 9",
+      "text_length": 61,
+      "preview": "'  V>-   <?^v  \"'^\"^/w.'^i^  J:^ ^Ur  ^   ^T^-'^'^'' %M  tj^/"
+    }
+  ]
+}

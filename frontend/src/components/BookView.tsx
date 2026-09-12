@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api, Book, Chapter } from "../api/client";
 import { usePlayback } from "../hooks/usePlayback";
 import { ChapterOverlay } from "./ChapterOverlay";
@@ -18,6 +18,34 @@ export function BookView({ book, onRefresh }: Props) {
   const [jobStatus, setJobStatus] = useState("");
   const [exporting, setExporting] = useState(false);
   const [showChapters, setShowChapters] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+
+  const [voices, setVoices] = useState<string[]>([]);
+  const [hindiPresets, setHindiPresets] = useState<{ id: string; name: string; description: string }[]>([]);
+  const [selectedVoiceId, setSelectedVoiceId] = useState("");
+  const [selectedPresetId, setSelectedPresetId] = useState("");
+  const [lang, setLang] = useState<string>("");
+  const [previewingId, setPreviewingId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    api.listVoices().then((res) => setVoices(res.voices)).catch(() => {});
+    api.listHindiPresets().then((res) => setHindiPresets(res)).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    if (book) {
+      setLang(book.language);
+      setSelectedVoiceId(book.voice_id || "");
+      setSelectedPresetId(book.voice_prompt || "");
+    }
+  }, [book, showSettings]);
+
+  useEffect(() => {
+    return () => {
+      audioRef.current?.pause();
+    };
+  }, []);
 
   const pb = usePlayback({
     book,
@@ -80,6 +108,9 @@ export function BookView({ book, onRefresh }: Props) {
           <div className="actions">
             <button className="btn-primary" onClick={startNarration} disabled={!!jobId}>
               {jobId ? "Narrating…" : readyCount > 0 ? "Re-narrate" : "Generate narration"}
+            </button>
+            <button className="btn-ghost" onClick={() => setShowSettings(true)}>
+              Settings
             </button>
             {readyCount > 0 && (
               <>
@@ -152,6 +183,155 @@ export function BookView({ book, onRefresh }: Props) {
           setShowChapters(false);
         }}
       />
+
+      {showSettings && (
+        <div className="chapter-overlay-backdrop" onClick={() => setShowSettings(false)}>
+          <div className="chapter-overlay" onClick={(e) => e.stopPropagation()} style={{ padding: "1.25rem" }}>
+            <div className="chapter-overlay-header" style={{ padding: "0 0 1rem 0" }}>
+              <h3>Book Settings</h3>
+              <button onClick={() => setShowSettings(false)}>✕</button>
+            </div>
+            
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "0.5rem" }}>
+              <div>
+                <span className="lang-label" style={{ display: "block", marginBottom: "0.5rem" }}>Language</span>
+                <select
+                  value={lang}
+                  onChange={(e) => setLang(e.target.value)}
+                  style={{
+                    width: "100%",
+                    background: "var(--bg-app)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "6px",
+                    color: "var(--text-primary)",
+                    padding: "0.5rem",
+                    fontFamily: "inherit"
+                  }}
+                >
+                  <option value="auto">Auto-detect</option>
+                  <option value="en">English</option>
+                  <option value="hi">Hindi</option>
+                  <option value="mixed">Mixed</option>
+                </select>
+              </div>
+
+              {lang !== "hi" && voices.length > 0 && (
+                <div>
+                  <span className="lang-label" style={{ display: "block", marginBottom: "0.5rem" }}>English voice</span>
+                  <div style={{ display: "flex", gap: "0.5rem" }}>
+                    <select
+                      value={selectedVoiceId}
+                      onChange={(e) => setSelectedVoiceId(e.target.value)}
+                      style={{
+                        flex: 1,
+                        background: "var(--bg-app)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "6px",
+                        color: "var(--text-primary)",
+                        padding: "0.5rem",
+                        fontFamily: "inherit"
+                      }}
+                    >
+                      <option value="">(None - Default af_heart)</option>
+                      {voices.map((v) => (
+                        <option key={v} value={v}>
+                          {v}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      className="btn-ghost"
+                      onClick={() => {
+                        if (!selectedVoiceId) return;
+                        if (previewingId === selectedVoiceId) {
+                          audioRef.current?.pause();
+                          setPreviewingId(null);
+                        } else {
+                          audioRef.current?.pause();
+                          const url = api.voicePreviewUrl(selectedVoiceId);
+                          const audio = new Audio(url);
+                          audio.onended = () => setPreviewingId(null);
+                          audioRef.current = audio;
+                          audio.play().catch(() => setPreviewingId(null));
+                          setPreviewingId(selectedVoiceId);
+                        }
+                      }}
+                      disabled={!selectedVoiceId}
+                      style={{ padding: "0.5rem 0.75rem", fontSize: "0.85rem", whiteSpace: "nowrap" }}
+                    >
+                      {previewingId === selectedVoiceId ? "⏸ Stop" : "▶ Preview"}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {lang !== "en" && hindiPresets.length > 0 && (
+                <div>
+                  <span className="lang-label" style={{ display: "block", marginBottom: "0.5rem" }}>Hindi voice preset</span>
+                  <select
+                    value={selectedPresetId}
+                    onChange={(e) => setSelectedPresetId(e.target.value)}
+                    style={{
+                      width: "100%",
+                      background: "var(--bg-app)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "6px",
+                      color: "var(--text-primary)",
+                      padding: "0.5rem",
+                      fontFamily: "inherit"
+                    }}
+                  >
+                    <option value="">(None - Default clear_warm_female)</option>
+                    {hindiPresets.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                  {selectedPresetId && (
+                    <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)", display: "block", marginTop: "0.25rem" }}>
+                      {hindiPresets.find((p) => p.id === selectedPresetId)?.description}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              <div style={{ marginTop: "1rem", display: "flex", justifyContent: "flex-end", gap: "0.5rem" }}>
+                <button className="btn-ghost" onClick={() => setShowSettings(false)}>
+                  Cancel
+                </button>
+                <button
+                  className="btn-primary"
+                  onClick={async () => {
+                    const voiceChanged =
+                      lang !== book.language ||
+                      selectedVoiceId !== (book.voice_id || "") ||
+                      selectedPresetId !== (book.voice_prompt || "");
+
+                    if (voiceChanged && readyCount > 0) {
+                      const confirm = window.confirm(
+                        "This will re-narrate already-generated chapters in the new voice — continue?"
+                      );
+                      if (!confirm) return;
+                    }
+
+                    await api.updateBook(book.id, {
+                      language: lang,
+                      voice_id: selectedVoiceId || null,
+                      voice_prompt: selectedPresetId || null,
+                    });
+                    onRefresh();
+                    setShowSettings(false);
+                  }}
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .book-view { padding: 2rem; overflow-y: auto; flex: 1; }

@@ -43,10 +43,31 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    api.health()
-      .then(() => setBackendOk(true))
-      .catch(() => setBackendOk(false));
-    refreshBooks();
+    let active = true;
+    let timer: any = null;
+
+    const check = async () => {
+      try {
+        await api.health();
+        if (active) {
+          setBackendOk(true);
+          refreshBooks();
+          if (timer) clearInterval(timer);
+        }
+      } catch {
+        if (active) {
+          setBackendOk(false);
+        }
+      }
+    };
+
+    check();
+    timer = setInterval(check, 1500);
+
+    return () => {
+      active = false;
+      if (timer) clearInterval(timer);
+    };
   }, [refreshBooks]);
 
   const handleImported = async (bookId: number) => {
@@ -66,6 +87,29 @@ export default function App() {
   const handleCoverChange = async (bookId: number, file: File) => {
     await api.uploadCover(bookId, file);
     refreshBook(bookId);
+  };
+
+  const handleRename = async (bookId: number, oldTitle: string) => {
+    const newTitle = prompt("Enter new title:", oldTitle);
+    if (newTitle && newTitle.trim() && newTitle.trim() !== oldTitle) {
+      try {
+        await api.updateBook(bookId, { title: newTitle.trim() });
+        await refreshBooks();
+      } catch (err) {
+        alert(err instanceof Error ? err.message : "Rename failed");
+      }
+    }
+  };
+
+  const handleDelete = async (bookId: number) => {
+    if (confirm("Are you sure you want to delete this book? This will erase all text, cover image, and generated audio from disk.")) {
+      try {
+        await api.deleteBook(bookId);
+        await refreshBooks();
+      } catch (err) {
+        alert(err instanceof Error ? err.message : "Deletion failed");
+      }
+    }
   };
 
   if (backendOk === false) {
@@ -118,6 +162,8 @@ export default function App() {
           }
         }}
         onCoverChange={handleCoverChange}
+        onRename={handleRename}
+        onDelete={handleDelete}
       />
 
       <main className="main-content">

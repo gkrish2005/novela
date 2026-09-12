@@ -1,0 +1,209 @@
+{
+  "document_id": "005_sherlock_holmes",
+  "title": "The Adventures of Sherlock Holmes",
+  "author": "Arthur Conan Doyle",
+  "source_file": "adventuresofsher001892doyl.pdf",
+  "edition_notes": "George Newnes first book edition (1892, 332 pages). Contains 12 short story adventures.",
+  "human_verified": true,
+  "verification_coverage": "human_verified_full",
+  "structural_notes": "Single-tier collection of 12 adventures. Parser failure on this book was caused by 'ADVENTURE' keyword absence in parser lexical table, not structural ambiguity.",
+  "scored_levels": [
+    "adventure"
+  ],
+  "deferred_levels": [],
+  "benchmark_status": "active",
+  "nodes": [
+    {
+      "node_id": "sh_adv_1",
+      "parent_id": null,
+      "title": "Adventure 1: A Scandal in Bohemia",
+      "type": "adventure",
+      "level": 1,
+      "order": 1,
+      "page_start": 9,
+      "page_end": null,
+      "subtitles": [
+        "I. A Scandal in Bohemia"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 1 starting on page 9. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_2",
+      "parent_id": null,
+      "title": "Adventure 2: The Red-Headed League",
+      "type": "adventure",
+      "level": 1,
+      "order": 2,
+      "page_start": 36,
+      "page_end": null,
+      "subtitles": [
+        "II. The Red-Headed League"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 2 starting on page 36. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_3",
+      "parent_id": null,
+      "title": "Adventure 3: A Case of Identity",
+      "type": "adventure",
+      "level": 1,
+      "order": 3,
+      "page_start": 61,
+      "page_end": null,
+      "subtitles": [
+        "III. A Case of Identity"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 3 starting on page 61. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_4",
+      "parent_id": null,
+      "title": "Adventure 4: The Boscombe Valley Mystery",
+      "type": "adventure",
+      "level": 1,
+      "order": 4,
+      "page_start": 82,
+      "page_end": null,
+      "subtitles": [
+        "IV. The Boscombe Valley Mystery"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 4 starting on page 82. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_5",
+      "parent_id": null,
+      "title": "Adventure 5: The Five Orange Pips",
+      "type": "adventure",
+      "level": 1,
+      "order": 5,
+      "page_start": 109,
+      "page_end": null,
+      "subtitles": [
+        "V. The Five Orange Pips"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 5 starting on page 109. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_6",
+      "parent_id": null,
+      "title": "Adventure 6: The Man with the Twisted Lip",
+      "type": "adventure",
+      "level": 1,
+      "order": 6,
+      "page_start": 131,
+      "page_end": null,
+      "subtitles": [
+        "VI. The Man with the Twisted Lip"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 6 starting on page 131. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_7",
+      "parent_id": null,
+      "title": "Adventure 7: The Adventure of the Blue Carbuncle",
+      "type": "adventure",
+      "level": 1,
+      "order": 7,
+      "page_start": 157,
+      "page_end": null,
+      "subtitles": [
+        "VII. The Adventure of the Blue Carbuncle"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 7 starting on page 157. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_8",
+      "parent_id": null,
+      "title": "Adventure 8: The Adventure of the Speckled Band",
+      "type": "adventure",
+      "level": 1,
+      "order": 8,
+      "page_start": 182,
+      "page_end": null,
+      "subtitles": [
+        "VIII. The Adventure of the Speckled Band"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 8 starting on page 182. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_9",
+      "parent_id": null,
+      "title": "Adventure 9: The Adventure of the Engineer's Thumb",
+      "type": "adventure",
+      "level": 1,
+      "order": 9,
+      "page_start": 210,
+      "page_end": null,
+      "subtitles": [
+        "IX. The Adventure of the Engineer's Thumb"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 9 starting on page 210. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_10",
+      "parent_id": null,
+      "title": "Adventure 10: The Adventure of the Noble Bachelor",
+      "type": "adventure",
+      "level": 1,
+      "order": 10,
+      "page_start": 235,
+      "page_end": null,
+      "subtitles": [
+        "X. The Adventure of the Noble Bachelor"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 10 starting on page 235. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_11",
+      "parent_id": null,
+      "title": "Adventure 11: The Adventure of the Beryl Coronet",
+      "type": "adventure",
+      "level": 1,
+      "order": 11,
+      "page_start": 262,
+      "page_end": null,
+      "subtitles": [
+        "XI. The Adventure of the Beryl Coronet"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 11 starting on page 262. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "sh_adv_12",
+      "parent_id": null,
+      "title": "Adventure 12: The Adventure of the Copper Beeches",
+      "type": "adventure",
+      "level": 1,
+      "order": 12,
+      "page_start": 289,
+      "page_end": null,
+      "subtitles": [
+        "XII. The Adventure of the Copper Beeches"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Adventure 12 starting on page 289. Headings in PDF are styled as 'ADVENTURE I. ...'.",
+      "benchmark_status": "scored"
+    }
+  ]
+}

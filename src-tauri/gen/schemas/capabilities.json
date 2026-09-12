@@ -1,0 +1,1 @@
+{"com.novela.app":{"identifier":"com.novela.app","description":"","remote":{"urls":["http://localhost:1420/**","http://127.0.0.1:1420/**"]},"local":true,"windows":["main"],"permissions":["core:default","shell:allow-open","dialog:allow-open"]}}

@@ -30,6 +30,8 @@ class BookOut(BaseModel):
     total_duration_ms: int
     created_at: datetime
     chapters: list[ChapterOut] = []
+    voice_id: Optional[str] = None
+    voice_prompt: Optional[str] = None
 
 
 class WordOut(BaseModel):

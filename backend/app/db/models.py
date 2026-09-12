@@ -20,6 +20,8 @@ class Book(SQLModel, table=True):
     created_at: datetime = Field(default_factory=datetime.utcnow)
     total_duration_ms: int = 0
     language: str = "en"  # en | hi | mixed
+    voice_id: Optional[str] = Field(default=None)
+    voice_prompt: Optional[str] = Field(default=None)
 
 
 class Chapter(SQLModel, table=True):

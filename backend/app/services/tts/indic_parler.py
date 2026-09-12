@@ -13,13 +13,29 @@ _tokenizer = None
 _description_tokenizer = None
 
 MODEL_ID = "ai4bharat/indic-parler-tts"
-DESCRIPTION = (
-    "A female speaker with a clear, warm Hindi voice delivers the narration "
-    "at a moderate pace in a quiet environment."
-)
+
+HINDI_PRESETS = {
+    "clear_warm_female": (
+        "A female speaker with a clear, warm Hindi voice delivers the narration "
+        "at a moderate pace in a quiet environment."
+    ),
+    "deep_expressive_male": (
+        "A male speaker with a deep, expressive Hindi voice delivers the narration "
+        "at a moderate pace in a quiet environment."
+    ),
+    "slow_soft_female": (
+        "A female speaker with a soft, slow Hindi voice delivers the narration "
+        "in a quiet environment."
+    )
+}
+
+DEFAULT_DESCRIPTION = HINDI_PRESETS["clear_warm_female"]
 
 
 def _device() -> str:
+    import platform
+    if platform.system() == "Darwin":
+        return "cpu"
     if torch.backends.mps.is_available():
         return "mps"
     if torch.cuda.is_available():
@@ -40,11 +56,12 @@ def _load():
     return _model, _tokenizer, _description_tokenizer
 
 
-def synthesize_hindi(text: str, output_path: Path) -> None:
+def synthesize_hindi(text: str, output_path: Path, voice_prompt: str | None = None) -> None:
     model, tokenizer, description_tokenizer = _load()
     device = _device()
 
-    desc_ids = description_tokenizer(DESCRIPTION, return_tensors="pt").input_ids.to(device)
+    prompt = HINDI_PRESETS.get(voice_prompt, voice_prompt) if voice_prompt else DEFAULT_DESCRIPTION
+    desc_ids = description_tokenizer(prompt, return_tensors="pt").input_ids.to(device)
     prompt_ids = tokenizer(text, return_tensors="pt").input_ids.to(device)
 
     with torch.no_grad():

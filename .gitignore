@@ -31,9 +31,14 @@ src-tauri/icons/icon.iconset/
 *.sqlite3
 *.db
 
+# Validation corpus (heavy PDF/EPUB books)
+[Vv]alidation/[Cc]orpus/
+.venv/
+
 # OS
 .DS_Store
 
 # Editor
 .vscode/
 .idea/
+

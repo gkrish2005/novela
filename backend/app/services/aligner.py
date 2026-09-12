@@ -6,6 +6,18 @@ from pathlib import Path
 
 import torch
 
+try:
+    _original_torch_load = torch.load
+    def _patched_torch_load(*args, **kwargs):
+        if "weights_only" in kwargs:
+            kwargs["weights_only"] = False
+        else:
+            kwargs.setdefault("weights_only", False)
+        return _original_torch_load(*args, **kwargs)
+    torch.load = _patched_torch_load
+except Exception:
+    pass
+
 _model_cache: dict[str, object] = {}
 
 
@@ -20,12 +32,16 @@ def _device() -> str:
 def _load_model(language: str):
     import whisperx
 
-    key = f"{language}:{_device()}"
+    device = _device()
+    asr_device = "cpu" if device == "mps" else device
+    compute_type = "int8" if asr_device == "cpu" else "float16"
+
+    key = f"{language}:{asr_device}"
     if key not in _model_cache:
         _model_cache[key] = whisperx.load_model(
             "large-v2",
-            device=_device(),
-            compute_type="float32" if _device() == "cpu" else "float16",
+            device=asr_device,
+            compute_type=compute_type,
             language=language,
         )
     return _model_cache[key]
@@ -43,7 +59,7 @@ def align_audio(
     model = _load_model(language)
     audio = whisperx.load_audio(str(audio_path))
 
-    result = model.transcribe(audio, batch_size=8, language=language)
+    result = model.transcribe(audio, batch_size=4, language=language)
     align_model, metadata = whisperx.load_align_model(
         language_code=language,
         device=device,

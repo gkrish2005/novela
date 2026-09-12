@@ -1,0 +1,1064 @@
+{
+  "document_id": "009_moby_dick",
+  "title": "Moby-Dick; or, The Whale (Volume 1)",
+  "author": "Herman Melville",
+  "source_file": "mobydickorwhale01melvuoft.pdf",
+  "edition_notes": "Richard Bentley 1851 first English edition (Volume 1 of 3, 394 pages). Contains Etymology, Extracts, and Chapters 1 to 60 (Loomings through The Line).",
+  "human_verified": true,
+  "verification_coverage": "human_verified_full",
+  "structural_notes": "Source PDF is Volume 1 only (60 chapters), ending at Chapter LX on page 383. Canonical GT is aligned to this actual edition rather than a 135-chapter single-volume edition. Printed TOC entries on pages 13-14 are excluded from candidate headings. Chapter matching is based on 'CHAPTER N'; descriptive subtitles are recorded as optional metadata.",
+  "scored_levels": [
+    "front_matter",
+    "chapter"
+  ],
+  "deferred_levels": [],
+  "benchmark_status": "active",
+  "nodes": [
+    {
+      "node_id": "mb_etymology",
+      "parent_id": null,
+      "title": "Etymology",
+      "type": "front_matter",
+      "level": 1,
+      "order": 1,
+      "page_start": 15,
+      "page_end": 16,
+      "verification_status": "human_verified",
+      "verification_notes": "Etymology front matter supplied by a late Consumptive Usher.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_extracts",
+      "parent_id": null,
+      "title": "Extracts",
+      "type": "front_matter",
+      "level": 1,
+      "order": 2,
+      "page_start": 17,
+      "page_end": 30,
+      "verification_status": "human_verified",
+      "verification_notes": "Extracts sub-sub-librarian compilation.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_1",
+      "parent_id": null,
+      "title": "Chapter 1",
+      "type": "chapter",
+      "level": 1,
+      "order": 3,
+      "page_start": 31,
+      "page_end": null,
+      "subtitles": [
+        "Loomings",
+        "CHAPTER 1. Loomings"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 1 ('Loomings') on page 31. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_2",
+      "parent_id": null,
+      "title": "Chapter 2",
+      "type": "chapter",
+      "level": 1,
+      "order": 4,
+      "page_start": 38,
+      "page_end": null,
+      "subtitles": [
+        "The Carpet-Bag",
+        "CHAPTER 2. The Carpet-Bag"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 2 ('The Carpet-Bag') on page 38. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_3",
+      "parent_id": null,
+      "title": "Chapter 3",
+      "type": "chapter",
+      "level": 1,
+      "order": 5,
+      "page_start": 43,
+      "page_end": null,
+      "subtitles": [
+        "The Spouter-Inn",
+        "CHAPTER 3. The Spouter-Inn"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 3 ('The Spouter-Inn') on page 43. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_4",
+      "parent_id": null,
+      "title": "Chapter 4",
+      "type": "chapter",
+      "level": 1,
+      "order": 6,
+      "page_start": 61,
+      "page_end": null,
+      "subtitles": [
+        "The Counterpane",
+        "CHAPTER 4. The Counterpane"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 4 ('The Counterpane') on page 61. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_5",
+      "parent_id": null,
+      "title": "Chapter 5",
+      "type": "chapter",
+      "level": 1,
+      "order": 7,
+      "page_start": 66,
+      "page_end": null,
+      "subtitles": [
+        "Breakfast",
+        "CHAPTER 5. Breakfast"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 5 ('Breakfast') on page 66. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_6",
+      "parent_id": null,
+      "title": "Chapter 6",
+      "type": "chapter",
+      "level": 1,
+      "order": 8,
+      "page_start": 69,
+      "page_end": null,
+      "subtitles": [
+        "The Street",
+        "CHAPTER 6. The Street"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 6 ('The Street') on page 69. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_7",
+      "parent_id": null,
+      "title": "Chapter 7",
+      "type": "chapter",
+      "level": 1,
+      "order": 9,
+      "page_start": 72,
+      "page_end": null,
+      "subtitles": [
+        "The Chapel",
+        "CHAPTER 7. The Chapel"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 7 ('The Chapel') on page 72. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_8",
+      "parent_id": null,
+      "title": "Chapter 8",
+      "type": "chapter",
+      "level": 1,
+      "order": 10,
+      "page_start": 76,
+      "page_end": null,
+      "subtitles": [
+        "The Pulpit",
+        "CHAPTER 8. The Pulpit"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 8 ('The Pulpit') on page 76. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_9",
+      "parent_id": null,
+      "title": "Chapter 9",
+      "type": "chapter",
+      "level": 1,
+      "order": 11,
+      "page_start": 79,
+      "page_end": null,
+      "subtitles": [
+        "The Sermon",
+        "CHAPTER 9. The Sermon"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 9 ('The Sermon') on page 79. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_10",
+      "parent_id": null,
+      "title": "Chapter 10",
+      "type": "chapter",
+      "level": 1,
+      "order": 12,
+      "page_start": 90,
+      "page_end": null,
+      "subtitles": [
+        "A Bosom Friend",
+        "CHAPTER 10. A Bosom Friend"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 10 ('A Bosom Friend') on page 90. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_11",
+      "parent_id": null,
+      "title": "Chapter 11",
+      "type": "chapter",
+      "level": 1,
+      "order": 13,
+      "page_start": 95,
+      "page_end": null,
+      "subtitles": [
+        "Nightgown",
+        "CHAPTER 11. Nightgown"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 11 ('Nightgown') on page 95. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_12",
+      "parent_id": null,
+      "title": "Chapter 12",
+      "type": "chapter",
+      "level": 1,
+      "order": 14,
+      "page_start": 98,
+      "page_end": null,
+      "subtitles": [
+        "Biographical",
+        "CHAPTER 12. Biographical"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 12 ('Biographical') on page 98. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_13",
+      "parent_id": null,
+      "title": "Chapter 13",
+      "type": "chapter",
+      "level": 1,
+      "order": 15,
+      "page_start": 101,
+      "page_end": null,
+      "subtitles": [
+        "Wheelbarrow",
+        "CHAPTER 13. Wheelbarrow"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 13 ('Wheelbarrow') on page 101. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_14",
+      "parent_id": null,
+      "title": "Chapter 14",
+      "type": "chapter",
+      "level": 1,
+      "order": 16,
+      "page_start": 107,
+      "page_end": null,
+      "subtitles": [
+        "Nantucket",
+        "CHAPTER 14. Nantucket"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 14 ('Nantucket') on page 107. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_15",
+      "parent_id": null,
+      "title": "Chapter 15",
+      "type": "chapter",
+      "level": 1,
+      "order": 17,
+      "page_start": 110,
+      "page_end": null,
+      "subtitles": [
+        "Chowder",
+        "CHAPTER 15. Chowder"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 15 ('Chowder') on page 110. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_16",
+      "parent_id": null,
+      "title": "Chapter 16",
+      "type": "chapter",
+      "level": 1,
+      "order": 18,
+      "page_start": 114,
+      "page_end": null,
+      "subtitles": [
+        "The Ship",
+        "CHAPTER 16. The Ship"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 16 ('The Ship') on page 114. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_17",
+      "parent_id": null,
+      "title": "Chapter 17",
+      "type": "chapter",
+      "level": 1,
+      "order": 19,
+      "page_start": 132,
+      "page_end": null,
+      "subtitles": [
+        "The Ramadan",
+        "CHAPTER 17. The Ramadan"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 17 ('The Ramadan') on page 132. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_18",
+      "parent_id": null,
+      "title": "Chapter 18",
+      "type": "chapter",
+      "level": 1,
+      "order": 20,
+      "page_start": 140,
+      "page_end": null,
+      "subtitles": [
+        "His Mark",
+        "CHAPTER 18. His Mark"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 18 ('His Mark') on page 140. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_19",
+      "parent_id": null,
+      "title": "Chapter 19",
+      "type": "chapter",
+      "level": 1,
+      "order": 21,
+      "page_start": 145,
+      "page_end": null,
+      "subtitles": [
+        "The Prophet",
+        "CHAPTER 19. The Prophet"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 19 ('The Prophet') on page 145. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_20",
+      "parent_id": null,
+      "title": "Chapter 20",
+      "type": "chapter",
+      "level": 1,
+      "order": 22,
+      "page_start": 149,
+      "page_end": null,
+      "subtitles": [
+        "All Astir",
+        "CHAPTER 20. All Astir"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 20 ('All Astir') on page 149. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_21",
+      "parent_id": null,
+      "title": "Chapter 21",
+      "type": "chapter",
+      "level": 1,
+      "order": 23,
+      "page_start": 152,
+      "page_end": null,
+      "subtitles": [
+        "Going Aboard",
+        "CHAPTER 21. Going Aboard"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 21 ('Going Aboard') on page 152. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_22",
+      "parent_id": null,
+      "title": "Chapter 22",
+      "type": "chapter",
+      "level": 1,
+      "order": 24,
+      "page_start": 156,
+      "page_end": null,
+      "subtitles": [
+        "Merry Christmas",
+        "CHAPTER 22. Merry Christmas"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 22 ('Merry Christmas') on page 156. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_23",
+      "parent_id": null,
+      "title": "Chapter 23",
+      "type": "chapter",
+      "level": 1,
+      "order": 25,
+      "page_start": 162,
+      "page_end": null,
+      "subtitles": [
+        "The Lee Shore",
+        "CHAPTER 23. The Lee Shore"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 23 ('The Lee Shore') on page 162. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_24",
+      "parent_id": null,
+      "title": "Chapter 24",
+      "type": "chapter",
+      "level": 1,
+      "order": 26,
+      "page_start": 164,
+      "page_end": null,
+      "subtitles": [
+        "The Advocate",
+        "CHAPTER 24. The Advocate"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 24 ('The Advocate') on page 164. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_25",
+      "parent_id": null,
+      "title": "Chapter 25",
+      "type": "chapter",
+      "level": 1,
+      "order": 27,
+      "page_start": 170,
+      "page_end": null,
+      "subtitles": [
+        "Postscript",
+        "CHAPTER 25. Postscript"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 25 ('Postscript') on page 170. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_26",
+      "parent_id": null,
+      "title": "Chapter 26",
+      "type": "chapter",
+      "level": 1,
+      "order": 28,
+      "page_start": 171,
+      "page_end": null,
+      "subtitles": [
+        "Knights and Squires",
+        "CHAPTER 26. Knights and Squires"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 26 ('Knights and Squires') on page 171. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_27",
+      "parent_id": null,
+      "title": "Chapter 27",
+      "type": "chapter",
+      "level": 1,
+      "order": 29,
+      "page_start": 175,
+      "page_end": null,
+      "subtitles": [
+        "Knights and Squires",
+        "CHAPTER 27. Knights and Squires"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 27 ('Knights and Squires') on page 175. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_28",
+      "parent_id": null,
+      "title": "Chapter 28",
+      "type": "chapter",
+      "level": 1,
+      "order": 30,
+      "page_start": 181,
+      "page_end": null,
+      "subtitles": [
+        "Ahab",
+        "CHAPTER 28. Ahab"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 28 ('Ahab') on page 181. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_29",
+      "parent_id": null,
+      "title": "Chapter 29",
+      "type": "chapter",
+      "level": 1,
+      "order": 31,
+      "page_start": 186,
+      "page_end": null,
+      "subtitles": [
+        "To Him, Stubb",
+        "CHAPTER 29. To Him, Stubb"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 29 ('To Him, Stubb') on page 186. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_30",
+      "parent_id": null,
+      "title": "Chapter 30",
+      "type": "chapter",
+      "level": 1,
+      "order": 32,
+      "page_start": 190,
+      "page_end": null,
+      "subtitles": [
+        "The Pipe",
+        "CHAPTER 30. The Pipe"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 30 ('The Pipe') on page 190. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_31",
+      "parent_id": null,
+      "title": "Chapter 31",
+      "type": "chapter",
+      "level": 1,
+      "order": 33,
+      "page_start": 191,
+      "page_end": null,
+      "subtitles": [
+        "Queen Mab",
+        "CHAPTER 31. Queen Mab"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 31 ('Queen Mab') on page 191. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_32",
+      "parent_id": null,
+      "title": "Chapter 32",
+      "type": "chapter",
+      "level": 1,
+      "order": 34,
+      "page_start": 194,
+      "page_end": null,
+      "subtitles": [
+        "Cetology",
+        "CHAPTER 32. Cetology"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 32 ('Cetology') on page 194. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_33",
+      "parent_id": null,
+      "title": "Chapter 33",
+      "type": "chapter",
+      "level": 1,
+      "order": 35,
+      "page_start": 210,
+      "page_end": null,
+      "subtitles": [
+        "The Specksynder",
+        "CHAPTER 33. The Specksynder"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 33 ('The Specksynder') on page 210. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_34",
+      "parent_id": null,
+      "title": "Chapter 34",
+      "type": "chapter",
+      "level": 1,
+      "order": 36,
+      "page_start": 214,
+      "page_end": null,
+      "subtitles": [
+        "The Cabin-Table",
+        "CHAPTER 34. The Cabin-Table"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 34 ('The Cabin-Table') on page 214. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_35",
+      "parent_id": null,
+      "title": "Chapter 35",
+      "type": "chapter",
+      "level": 1,
+      "order": 37,
+      "page_start": 221,
+      "page_end": null,
+      "subtitles": [
+        "The Mast-Head",
+        "CHAPTER 35. The Mast-Head"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 35 ('The Mast-Head') on page 221. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_36",
+      "parent_id": null,
+      "title": "Chapter 36",
+      "type": "chapter",
+      "level": 1,
+      "order": 38,
+      "page_start": 229,
+      "page_end": null,
+      "subtitles": [
+        "The Quarter-Deck",
+        "CHAPTER 36. The Quarter-Deck"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 36 ('The Quarter-Deck') on page 229. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_37",
+      "parent_id": null,
+      "title": "Chapter 37",
+      "type": "chapter",
+      "level": 1,
+      "order": 39,
+      "page_start": 239,
+      "page_end": null,
+      "subtitles": [
+        "Sunset",
+        "CHAPTER 37. Sunset"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 37 ('Sunset') on page 239. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_38",
+      "parent_id": null,
+      "title": "Chapter 38",
+      "type": "chapter",
+      "level": 1,
+      "order": 40,
+      "page_start": 241,
+      "page_end": null,
+      "subtitles": [
+        "Dusk",
+        "CHAPTER 38. Dusk"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 38 ('Dusk') on page 241. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_39",
+      "parent_id": null,
+      "title": "Chapter 39",
+      "type": "chapter",
+      "level": 1,
+      "order": 41,
+      "page_start": 243,
+      "page_end": null,
+      "subtitles": [
+        "First Night-Watch",
+        "CHAPTER 39. First Night-Watch"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 39 ('First Night-Watch') on page 243. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_40",
+      "parent_id": null,
+      "title": "Chapter 40",
+      "type": "chapter",
+      "level": 1,
+      "order": 42,
+      "page_start": 244,
+      "page_end": null,
+      "subtitles": [
+        "Midnight, Forecastle",
+        "CHAPTER 40. Midnight, Forecastle"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 40 ('Midnight, Forecastle') on page 244. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_41",
+      "parent_id": null,
+      "title": "Chapter 41",
+      "type": "chapter",
+      "level": 1,
+      "order": 43,
+      "page_start": 252,
+      "page_end": null,
+      "subtitles": [
+        "Moby-Dick",
+        "CHAPTER 41. Moby-Dick"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 41 ('Moby-Dick') on page 252. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_42",
+      "parent_id": null,
+      "title": "Chapter 42",
+      "type": "chapter",
+      "level": 1,
+      "order": 44,
+      "page_start": 264,
+      "page_end": null,
+      "subtitles": [
+        "The Whiteness of the Whale",
+        "CHAPTER 42. The Whiteness of the Whale"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 42 ('The Whiteness of the Whale') on page 264. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_43",
+      "parent_id": null,
+      "title": "Chapter 43",
+      "type": "chapter",
+      "level": 1,
+      "order": 45,
+      "page_start": 275,
+      "page_end": null,
+      "subtitles": [
+        "Hark!",
+        "CHAPTER 43. Hark!"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 43 ('Hark!') on page 275. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_44",
+      "parent_id": null,
+      "title": "Chapter 44",
+      "type": "chapter",
+      "level": 1,
+      "order": 46,
+      "page_start": 277,
+      "page_end": null,
+      "subtitles": [
+        "The Chart",
+        "CHAPTER 44. The Chart"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 44 ('The Chart') on page 277. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_45",
+      "parent_id": null,
+      "title": "Chapter 45",
+      "type": "chapter",
+      "level": 1,
+      "order": 47,
+      "page_start": 284,
+      "page_end": null,
+      "subtitles": [
+        "The Affidavit",
+        "CHAPTER 45. The Affidavit"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 45 ('The Affidavit') on page 284. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_46",
+      "parent_id": null,
+      "title": "Chapter 46",
+      "type": "chapter",
+      "level": 1,
+      "order": 48,
+      "page_start": 295,
+      "page_end": null,
+      "subtitles": [
+        "Surmises",
+        "CHAPTER 46. Surmises"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 46 ('Surmises') on page 295. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_47",
+      "parent_id": null,
+      "title": "Chapter 47",
+      "type": "chapter",
+      "level": 1,
+      "order": 49,
+      "page_start": 299,
+      "page_end": null,
+      "subtitles": [
+        "The Mat-Maker",
+        "CHAPTER 47. The Mat-Maker"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 47 ('The Mat-Maker') on page 299. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_48",
+      "parent_id": null,
+      "title": "Chapter 48",
+      "type": "chapter",
+      "level": 1,
+      "order": 50,
+      "page_start": 303,
+      "page_end": null,
+      "subtitles": [
+        "The First Lowering",
+        "CHAPTER 48. The First Lowering"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 48 ('The First Lowering') on page 303. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_49",
+      "parent_id": null,
+      "title": "Chapter 49",
+      "type": "chapter",
+      "level": 1,
+      "order": 51,
+      "page_start": 316,
+      "page_end": null,
+      "subtitles": [
+        "The Hyena",
+        "CHAPTER 49. The Hyena"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 49 ('The Hyena') on page 316. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_50",
+      "parent_id": null,
+      "title": "Chapter 50",
+      "type": "chapter",
+      "level": 1,
+      "order": 52,
+      "page_start": 319,
+      "page_end": null,
+      "subtitles": [
+        "Ahab's Boat and Crew. Fedallah",
+        "CHAPTER 50. Ahab's Boat and Crew. Fedallah"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 50 ('Ahab's Boat and Crew. Fedallah') on page 319. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_51",
+      "parent_id": null,
+      "title": "Chapter 51",
+      "type": "chapter",
+      "level": 1,
+      "order": 53,
+      "page_start": 323,
+      "page_end": null,
+      "subtitles": [
+        "The Spirit-Spout",
+        "CHAPTER 51. The Spirit-Spout"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 51 ('The Spirit-Spout') on page 323. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_52",
+      "parent_id": null,
+      "title": "Chapter 52",
+      "type": "chapter",
+      "level": 1,
+      "order": 54,
+      "page_start": 328,
+      "page_end": null,
+      "subtitles": [
+        "The Albatross",
+        "CHAPTER 52. The Albatross"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 52 ('The Albatross') on page 328. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_53",
+      "parent_id": null,
+      "title": "Chapter 53",
+      "type": "chapter",
+      "level": 1,
+      "order": 55,
+      "page_start": 331,
+      "page_end": null,
+      "subtitles": [
+        "The Gam",
+        "CHAPTER 53. The Gam"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 53 ('The Gam') on page 331. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_54",
+      "parent_id": null,
+      "title": "Chapter 54",
+      "type": "chapter",
+      "level": 1,
+      "order": 56,
+      "page_start": 336,
+      "page_end": null,
+      "subtitles": [
+        "The Town-Ho's Story",
+        "CHAPTER 54. The Town-Ho's Story"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 54 ('The Town-Ho's Story') on page 336. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_55",
+      "parent_id": null,
+      "title": "Chapter 55",
+      "type": "chapter",
+      "level": 1,
+      "order": 57,
+      "page_start": 361,
+      "page_end": null,
+      "subtitles": [
+        "Of the Monstrous Pictures of Whales",
+        "CHAPTER 55. Of the Monstrous Pictures of Whales"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 55 ('Of the Monstrous Pictures of Whales') on page 361. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_56",
+      "parent_id": null,
+      "title": "Chapter 56",
+      "type": "chapter",
+      "level": 1,
+      "order": 58,
+      "page_start": 367,
+      "page_end": null,
+      "subtitles": [
+        "Of the Less Erroneous Pictures of Whales",
+        "CHAPTER 56. Of the Less Erroneous Pictures of Whales"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 56 ('Of the Less Erroneous Pictures of Whales') on page 367. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_57",
+      "parent_id": null,
+      "title": "Chapter 57",
+      "type": "chapter",
+      "level": 1,
+      "order": 59,
+      "page_start": 372,
+      "page_end": null,
+      "subtitles": [
+        "Of Whales in Paint; in Teeth; in Wood; in Sheet-Iron; in Stone; in Mountains; in Stars",
+        "CHAPTER 57. Of Whales in Paint; in Teeth; in Wood; in Sheet-Iron; in Stone; in Mountains; in Stars"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 57 ('Of Whales in Paint; in Teeth; in Wood; in Sheet-Iron; in Stone; in Mountains; in Stars') on page 372. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_58",
+      "parent_id": null,
+      "title": "Chapter 58",
+      "type": "chapter",
+      "level": 1,
+      "order": 60,
+      "page_start": 376,
+      "page_end": null,
+      "subtitles": [
+        "Brit",
+        "CHAPTER 58. Brit"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 58 ('Brit') on page 376. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_59",
+      "parent_id": null,
+      "title": "Chapter 59",
+      "type": "chapter",
+      "level": 1,
+      "order": 61,
+      "page_start": 380,
+      "page_end": null,
+      "subtitles": [
+        "Squid",
+        "CHAPTER 59. Squid"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 59 ('Squid') on page 380. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "mb_ch_60",
+      "parent_id": null,
+      "title": "Chapter 60",
+      "type": "chapter",
+      "level": 1,
+      "order": 62,
+      "page_start": 383,
+      "page_end": null,
+      "subtitles": [
+        "The Line",
+        "CHAPTER 60. The Line"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Chapter 60 ('The Line') on page 383. Scored primarily on chapter numbering; subtitles stored as optional metadata.",
+      "benchmark_status": "scored"
+    }
+  ]
+}

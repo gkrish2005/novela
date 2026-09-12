@@ -11,6 +11,8 @@ type Props = {
   onNew: () => void;
   onOpenPlayer: () => void;
   onCoverChange: (bookId: number, file: File) => void;
+  onRename: (bookId: number, oldTitle: string) => void;
+  onDelete: (bookId: number) => void;
 };
 
 export function LibrarySidebar({
@@ -23,6 +25,8 @@ export function LibrarySidebar({
   onNew,
   onOpenPlayer,
   onCoverChange,
+  onRename,
+  onDelete,
 }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
   const coverTarget = useRef<number | null>(null);
@@ -67,8 +71,32 @@ export function LibrarySidebar({
                 (e.target as HTMLImageElement).style.visibility = "hidden";
               }}
             />
-            <div className="row-meta">
-              <div className="row-title">{book.title}</div>
+            <div className="row-meta" style={{ flex: 1 }}>
+              <div className="row-title" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span>{book.title}</span>
+                <div className="item-actions">
+                  <button
+                    className="action-btn"
+                    title="Rename"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onRename(book.id, book.title);
+                    }}
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    className="action-btn"
+                    title="Delete"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDelete(book.id);
+                    }}
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
               <div className="row-sub">
                 {langLabel(book.language)} · {book.chapters.length} ch
                 {book.total_duration_ms > 0 && ` · ${formatTime(book.total_duration_ms)}`}
@@ -161,6 +189,27 @@ export function LibrarySidebar({
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+        .item-actions {
+          display: flex;
+          gap: 0.35rem;
+          opacity: 0;
+          transition: opacity 0.15s ease-in-out;
+        }
+        .library-row:hover .item-actions {
+          opacity: 1;
+        }
+        .action-btn {
+          background: transparent;
+          border: none;
+          padding: 2px 4px;
+          cursor: pointer;
+          font-size: 0.85rem;
+          border-radius: 4px;
+          transition: background 0.1s;
+        }
+        .action-btn:hover {
+          background: rgba(255, 255, 255, 0.12);
         }
         .row-sub {
           font-size: 0.75rem;

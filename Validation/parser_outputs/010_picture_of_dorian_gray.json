@@ -1,0 +1,260 @@
+{
+  "document_id": "010_picture_of_dorian_gray",
+  "title": "The Picture of dorian gray",
+  "author": "Oscar Wilde",
+  "total_pages": 248,
+  "raw_char_count": 538127,
+  "extraction_status": "native_text",
+  "parse_time_seconds": 19.97,
+  "ms_per_page": 80.53,
+  "pages_per_sec": 12.42,
+  "validation_report": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [],
+    "leaf_nodes": 9,
+    "text_loss_rate": 0.0,
+    "text_duplication_rate": 0.0,
+    "raw_char_count": 538127
+  },
+  "toc_reconciliation": {},
+  "semantic_nodes_count": 0,
+  "fallback_partitions_count": 9,
+  "document_tree": {
+    "id": "root",
+    "parent_id": null,
+    "node_type": "document",
+    "title": "The Picture of dorian gray",
+    "ordinal": null,
+    "page_start": 1,
+    "page_end": 248,
+    "char_start": 0,
+    "char_end": 538603,
+    "text_length": 0,
+    "confidence": 1.0,
+    "detection_method": "heuristic",
+    "uncertain": false,
+    "uncertainty_reasons": [],
+    "children": [
+      {
+        "id": "sec_1",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 1",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 0,
+        "char_end": 67688,
+        "text_length": 67688,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_2",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 2",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 67690,
+        "char_end": 126190,
+        "text_length": 58500,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_3",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 3",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 126192,
+        "char_end": 191143,
+        "text_length": 64951,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_4",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 4",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 191145,
+        "char_end": 260754,
+        "text_length": 69609,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_5",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 5",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 260756,
+        "char_end": 336846,
+        "text_length": 76090,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_6",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 6",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 336848,
+        "char_end": 414316,
+        "text_length": 77468,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_7",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 7",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 414318,
+        "char_end": 469992,
+        "text_length": 55674,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_8",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 8",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 469994,
+        "char_end": 535251,
+        "text_length": 65257,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      },
+      {
+        "id": "sec_9",
+        "parent_id": "root",
+        "node_type": "section",
+        "title": "Section 9",
+        "ordinal": null,
+        "page_start": 1,
+        "page_end": 248,
+        "char_start": 535253,
+        "char_end": 535343,
+        "text_length": 90,
+        "confidence": 0.45,
+        "detection_method": "paragraph_density_partition",
+        "uncertain": true,
+        "uncertainty_reasons": [
+          "Partitioned by paragraph density in absence of explicit headings"
+        ],
+        "children": []
+      }
+    ]
+  },
+  "narratable_chapters_count": 9,
+  "narratable_chapters": [
+    {
+      "title": "Section 1",
+      "text_length": 67688,
+      "preview": "COg  is  Fed  &s  (GES)  fe  OPA.  inl”  Sap  <>  iy,  a  ae  Picture  Dorian  Oscar  Wilde  CLASSICS  First  published "
+    },
+    {
+      "title": "Section 2",
+      "text_length": 58500,
+      "preview": "“T  should  object  very  strongly,  Harry,”  said  Hallward.  Dorian  Gray  turned  and  looked  at  him.  “TI  believe"
+    },
+    {
+      "title": "Section 3",
+      "text_length": 64951,
+      "preview": "“Because  I  have  loved  so  many  of  them,  Dorian.”  “Oh,  yes,  horrid  people  with  dyed  hair  and  painted  fac"
+    },
+    {
+      "title": "Section 4",
+      "text_length": 69609,
+      "preview": "it  leaves  one  unsatisfied.  What  more  can  one  want?  Yes,  Dorian,  you  will  always  be  fond  of  me.  I  repr"
+    },
+    {
+      "title": "Section 5",
+      "text_length": 76090,
+      "preview": "is  one  of  the  great  romantic  tragedies  of  the  age.  As  a  rule,  people  who  act  lead  the  most  commonplac"
+    },
+    {
+      "title": "Section 6",
+      "text_length": 77468,
+      "preview": "4is,*  birds  and  images;  veils  of  /acis  worked  in  Hungary  point;  Sicilian  brocades  and  stiff  Spanish  velv"
+    },
+    {
+      "title": "Section 7",
+      "text_length": 55674,
+      "preview": "“T  cannot  do  it,”  he  said,  mechanically,  as  though  words  could  alter  things.  “You  must.  You  have  no  ch"
+    },
+    {
+      "title": "Section 8",
+      "text_length": 65257,
+      "preview": "9  209»  “An  illusion.”  “Religion?”  “The  fashionable  substitute  for  belief.”  “You  ate  a  sceptic.”  “Never!  S"
+    },
+    {
+      "title": "Section 9",
+      "text_length": 90,
+      "preview": "Be  alusays  searching  for  new  sensations.  Be  afraid  of  sae  il  £08-0  UT TT TT AT"
+    }
+  ]
+}

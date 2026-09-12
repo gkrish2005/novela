@@ -25,6 +25,17 @@ Real package/model sources (confirmed):
 
 import os
 import pathlib
+import torch
+
+# Monkeypatch torch.load to default to weights_only=False for PyTorch 2.6+ compatibility
+_original_torch_load = torch.load
+def _patched_torch_load(*args, **kwargs):
+    if "weights_only" in kwargs:
+        kwargs["weights_only"] = False
+    else:
+        kwargs.setdefault("weights_only", False)
+    return _original_torch_load(*args, **kwargs)
+torch.load = _patched_torch_load
 
 MODELS_DIR = pathlib.Path(__file__).parent
 
@@ -34,11 +45,36 @@ MODELS_DIR = pathlib.Path(__file__).parent
 os.environ.setdefault("HF_HOME", str(MODELS_DIR / "hf_cache"))
 
 
-def download_kokoro() -> None:
-    from kokoro import KPipeline  # noqa: F401  (import triggers weight download)
+VOICES = [
+    "af_alloy", "af_aoede", "af_bella", "af_heart", "af_jessica", "af_kore", 
+    "af_nicole", "af_nova", "af_river", "af_sarah", "af_sky", "am_adam", 
+    "am_echo", "am_eric", "am_fenrir", "am_liam", "am_michael", "am_onyx", 
+    "am_puck", "am_santa", "bf_alice", "bf_emma", "bf_isabella", "bf_lily", 
+    "bm_daniel", "bm_fable", "bm_george", "bm_lewis", "ef_dora", "em_alex", 
+    "em_santa", "ff_siwis", "hf_alpha", "hf_beta", "hm_omega", "hm_psi", 
+    "if_sara", "im_nicola", "jf_alpha", "jf_gongitsune", "jf_nezumi", 
+    "jf_tebukuro", "jm_kumo", "pf_dora", "pm_alex", "pm_santa", "zf_xiaobei", 
+    "zf_xiaoni", "zf_xiaoxiao", "zf_xiaoyi", "zm_yunjian", "zm_yunxi", 
+    "zm_yunxia", "zm_yunyang"
+]
 
-    KPipeline(lang_code="a")  # American English voicepack
-    print("[ok] Kokoro weights cached.")
+
+def download_kokoro() -> None:
+    from kokoro import KPipeline
+    from huggingface_hub import hf_hub_download
+
+    print("Initializing Kokoro pipeline...")
+    KPipeline(lang_code="a")
+    print("[ok] Kokoro base weights cached.")
+
+    print(f"Downloading all {len(VOICES)} Kokoro voice files...")
+    for voice in VOICES:
+        try:
+            hf_hub_download(repo_id="hexgrad/Kokoro-82M", filename=f"voices/{voice}.pt")
+            print(f"  [ok] Cached voice: {voice}")
+        except Exception as e:
+            print(f"  [warning] Failed to download Kokoro voice {voice}: {e}")
+    print("[ok] Kokoro voice set cached.")
 
 
 def download_indic_parler_tts() -> None:
@@ -46,23 +82,41 @@ def download_indic_parler_tts() -> None:
     from transformers import AutoTokenizer
 
     model_id = "ai4bharat/indic-parler-tts"
-    ParlerTTSForConditionalGeneration.from_pretrained(model_id)
-    AutoTokenizer.from_pretrained(model_id)
-    print("[ok] Indic Parler-TTS weights cached.")
+    token = os.environ.get("HF_TOKEN")
+    print(f"Downloading Indic Parler-TTS weights (token present: {bool(token)})...")
+    try:
+        ParlerTTSForConditionalGeneration.from_pretrained(model_id, token=token)
+        AutoTokenizer.from_pretrained(model_id, token=token)
+        print("[ok] Indic Parler-TTS weights cached.")
+    except Exception as e:
+        print(f"\n[error] Failed to download Indic Parler-TTS: {e}")
+        print("Please accept the terms at: https://huggingface.co/ai4bharat/indic-parler-tts")
+        print("And ensure you pass your Hugging Face token, e.g.: HF_TOKEN=your_token python models/download_models.py")
+        raise e
 
 
 def download_whisperx() -> None:
     import whisperx
 
-    whisperx.load_model("large-v2", device="cpu")  # swap device at runtime
+    print("Downloading WhisperX large-v2 weights...")
+    whisperx.load_model("large-v2", device="cpu", compute_type="float32")
     print("[ok] WhisperX weights cached.")
 
 
 def main() -> None:
     print(f"Downloading model weights into {MODELS_DIR / 'hf_cache'} ...\n")
     download_kokoro()
-    download_indic_parler_tts()
-    download_whisperx()
+    try:
+        download_indic_parler_tts()
+    except Exception as e:
+        print(f"\n[warning] Indic Parler-TTS download failed: {e}")
+        print("Continuing with remaining downloads...")
+    
+    try:
+        download_whisperx()
+    except Exception as e:
+        print(f"\n[error] WhisperX download failed: {e}")
+        return
     print("\nAll models downloaded. The app can now run fully offline.")
 
 

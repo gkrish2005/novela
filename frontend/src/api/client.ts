@@ -22,6 +22,8 @@ export type Book = {
   total_duration_ms: number;
   created_at: string;
   chapters: Chapter[];
+  voice_id?: string | null;
+  voice_prompt?: string | null;
 };
 
 export type Word = {
@@ -54,17 +56,41 @@ export const api = {
   health: () => request<{ status: string }>("/health"),
   listBooks: () => request<Book[]>("/books"),
   getBook: (id: number) => request<Book>(`/books/${id}`),
-  updateBookLanguage: (id: number, language: string) =>
-    request<Book>(`/books/${id}?language=${language}`, { method: "PATCH" }),
-  importFile: async (file: File, language?: string) => {
+  updateBook: (id: number, data: { title?: string; language?: string; voice_id?: string | null; voice_prompt?: string | null }) => {
+    const params = new URLSearchParams();
+    if (data.title) params.set("title", data.title);
+    if (data.language) params.set("language", data.language);
+    if (data.voice_id !== undefined) params.set("voice_id", data.voice_id || "");
+    if (data.voice_prompt !== undefined) params.set("voice_prompt", data.voice_prompt || "");
+    return request<Book>(`/books/${id}?${params}`, { method: "PATCH" });
+  },
+  deleteBook: (id: number) => request<{ status: string }>(`/books/${id}`, { method: "DELETE" }),
+  importFile: async (file: File, language?: string, voiceId?: string, voicePrompt?: string) => {
     const form = new FormData();
     form.append("file", file);
     if (language) form.append("language", language);
+    if (voiceId) form.append("voice_id", voiceId);
+    if (voicePrompt) form.append("voice_prompt", voicePrompt);
     return request<{ book_id: number; title: string; detected_language: string; chapter_count: number }>(
       "/import",
       { method: "POST", body: form }
     );
   },
+  importLocalFile: async (path: string, language?: string, voiceId?: string, voicePrompt?: string) => {
+    const form = new FormData();
+    form.append("path", path);
+    if (language) form.append("language", language);
+    if (voiceId) form.append("voice_id", voiceId);
+    if (voicePrompt) form.append("voice_prompt", voicePrompt);
+    return request<{ book_id: number; title: string; detected_language: string; chapter_count: number }>(
+      "/import-path",
+      { method: "POST", body: form }
+    );
+  },
+  listVoices: () => request<{ voices: string[] }>("/voices"),
+  listHindiPresets: () => request<{ id: string; name: string; description: string }[]>("/voices/hindi-presets"),
+  voicePreviewUrl: (voiceId: string) => `${API_BASE}/voices/preview?voice_id=${voiceId}`,
+
   narrate: (bookId: number) => request<Job>(`/books/${bookId}/narrate`, { method: "POST" }),
   getJob: (jobId: number) => request<Job>(`/jobs/${jobId}`),
   getChapterWords: (chapterId: number) => request<Word[]>(`/chapters/${chapterId}/words`),

@@ -14,14 +14,20 @@ def engine_for_language(language: str) -> str:
     return ENGINES.get(language, "kokoro")
 
 
-def synthesize(text: str, language: str, output_path: Path) -> str:
+def synthesize(
+    text: str,
+    language: str,
+    output_path: Path,
+    voice_id: str | None = None,
+    voice_prompt: str | None = None,
+) -> str:
     engine = engine_for_language(language)
     if engine == "indic-parler-tts":
         from app.services.tts.indic_parler import synthesize_hindi
 
-        synthesize_hindi(text, output_path)
+        synthesize_hindi(text, output_path, voice_prompt)
     else:
         from app.services.tts.kokoro import synthesize_english
 
-        synthesize_english(text, output_path)
+        synthesize_english(text, output_path, voice_id)
     return engine

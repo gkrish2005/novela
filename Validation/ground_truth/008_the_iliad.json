@@ -1,0 +1,520 @@
+{
+  "document_id": "008_the_iliad",
+  "title": "The Iliad",
+  "author": "Homer (Translated by Robert Fagles)",
+  "source_file": "homer_the_iliad_penguin_classics_deluxe_edition-robert-fagles.pdf",
+  "edition_notes": "Penguin Classics Deluxe Edition (699 pages, 1990). Contains extensive scholarly front matter, 24 narrative Books, and scholarly back matter apparatus.",
+  "human_verified": true,
+  "verification_coverage": "human_verified_full",
+  "structural_notes": "Separated into 3 distinct functional zones: Front Matter (Preface, Knox Introduction, Translation Note), Primary Narrative (Books 1-24), and Back Matter (Notes, Genealogies, Bibliography, Pronouncing Glossary). Ambiguous internal headings inside scholarly apparatus are marked as non-structural candidate nodes to prevent over-segmentation.",
+  "scored_levels": [
+    "front_matter",
+    "book",
+    "back_matter"
+  ],
+  "deferred_levels": [
+    "apparatus_subheading"
+  ],
+  "benchmark_status": "active",
+  "nodes": [
+    {
+      "node_id": "iliad_fm_preface",
+      "parent_id": null,
+      "title": "Preface",
+      "type": "front_matter",
+      "level": 1,
+      "order": 1,
+      "page_start": 9,
+      "page_end": 14,
+      "verification_status": "human_verified",
+      "verification_notes": "Translator's Preface by Robert Fagles (pp. 9-14).",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_fm_intro",
+      "parent_id": null,
+      "title": "Introduction",
+      "type": "front_matter",
+      "level": 1,
+      "order": 2,
+      "page_start": 17,
+      "page_end": 64,
+      "verification_status": "human_verified",
+      "verification_notes": "Scholarly Introduction by Bernard Knox (pp. 17-64). Internal thematic subheadings within Knox intro are treated as non-structural apparatus.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_fm_trans_note",
+      "parent_id": null,
+      "title": "Note on the Translation",
+      "type": "front_matter",
+      "level": 1,
+      "order": 3,
+      "page_start": 69,
+      "page_end": 74,
+      "verification_status": "human_verified",
+      "verification_notes": "Translator's Note on verse, meter, and names (pp. 69-74).",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_1",
+      "parent_id": null,
+      "title": "Book 1: The Rage of Achilles",
+      "type": "book",
+      "level": 1,
+      "order": 4,
+      "page_start": 77,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 1",
+        "The Rage of Achilles"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 1 starting page 77.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_2",
+      "parent_id": null,
+      "title": "Book 2: Great Gathering of Armies",
+      "type": "book",
+      "level": 1,
+      "order": 5,
+      "page_start": 99,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 2",
+        "Great Gathering of Armies"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 2 starting page 99.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_3",
+      "parent_id": null,
+      "title": "Book 3: Helen Reviews the Champions",
+      "type": "book",
+      "level": 1,
+      "order": 6,
+      "page_start": 128,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 3",
+        "Helen Reviews the Champions"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 3 starting page 128.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_4",
+      "parent_id": null,
+      "title": "Book 4: The Truce Erupts in War",
+      "type": "book",
+      "level": 1,
+      "order": 7,
+      "page_start": 145,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 4",
+        "The Truce Erupts in War"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 4 starting page 145.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_5",
+      "parent_id": null,
+      "title": "Book 5: Diomedes Fights the Gods",
+      "type": "book",
+      "level": 1,
+      "order": 8,
+      "page_start": 164,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 5",
+        "Diomedes Fights the Gods"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 5 starting page 164.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_6",
+      "parent_id": null,
+      "title": "Book 6: Hector Returns to Troy",
+      "type": "book",
+      "level": 1,
+      "order": 9,
+      "page_start": 195,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 6",
+        "Hector Returns to Troy"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 6 starting page 195.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_7",
+      "parent_id": null,
+      "title": "Book 7: Ajax Duels with Hector",
+      "type": "book",
+      "level": 1,
+      "order": 10,
+      "page_start": 214,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 7",
+        "Ajax Duels with Hector"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 7 starting page 214.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_8",
+      "parent_id": null,
+      "title": "Book 8: The Tide of Battle Turns",
+      "type": "book",
+      "level": 1,
+      "order": 11,
+      "page_start": 230,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 8",
+        "The Tide of Battle Turns"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 8 starting page 230.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_9",
+      "parent_id": null,
+      "title": "Book 9: The Embassy to Achilles",
+      "type": "book",
+      "level": 1,
+      "order": 12,
+      "page_start": 251,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 9",
+        "The Embassy to Achilles"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 9 starting page 251.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_10",
+      "parent_id": null,
+      "title": "Book 10: Marauding Through the Night",
+      "type": "book",
+      "level": 1,
+      "order": 13,
+      "page_start": 275,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 10",
+        "Marauding Through the Night"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 10 starting page 275.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_11",
+      "parent_id": null,
+      "title": "Book 11: Agamemnon's Day of Glory",
+      "type": "book",
+      "level": 1,
+      "order": 14,
+      "page_start": 296,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 11",
+        "Agamemnon's Day of Glory"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 11 starting page 296.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_12",
+      "parent_id": null,
+      "title": "Book 12: The Trojans Storm the Rampart",
+      "type": "book",
+      "level": 1,
+      "order": 15,
+      "page_start": 326,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 12",
+        "The Trojans Storm the Rampart"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 12 starting page 326.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_13",
+      "parent_id": null,
+      "title": "Book 13: Battling for the Ships",
+      "type": "book",
+      "level": 1,
+      "order": 16,
+      "page_start": 342,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 13",
+        "Battling for the Ships"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 13 starting page 342.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_14",
+      "parent_id": null,
+      "title": "Book 14: Hera Outwits Zeus",
+      "type": "book",
+      "level": 1,
+      "order": 17,
+      "page_start": 370,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 14",
+        "Hera Outwits Zeus"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 14 starting page 370.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_15",
+      "parent_id": null,
+      "title": "Book 15: The Achaean Armies at Bay",
+      "type": "book",
+      "level": 1,
+      "order": 18,
+      "page_start": 388,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 15",
+        "The Achaean Armies at Bay"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 15 starting page 388.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_16",
+      "parent_id": null,
+      "title": "Book 16: Patroclus Fights and Dies",
+      "type": "book",
+      "level": 1,
+      "order": 19,
+      "page_start": 412,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 16",
+        "Patroclus Fights and Dies"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 16 starting page 412.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_17",
+      "parent_id": null,
+      "title": "Book 17: The Menelaus' Finest Hour",
+      "type": "book",
+      "level": 1,
+      "order": 20,
+      "page_start": 442,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 17",
+        "The Menelaus' Finest Hour"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 17 starting page 442.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_18",
+      "parent_id": null,
+      "title": "Book 18: The Shield of Achilles",
+      "type": "book",
+      "level": 1,
+      "order": 21,
+      "page_start": 467,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 18",
+        "The Shield of Achilles"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 18 starting page 467.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_19",
+      "parent_id": null,
+      "title": "Book 19: The Champion Goes to War",
+      "type": "book",
+      "level": 1,
+      "order": 22,
+      "page_start": 489,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 19",
+        "The Champion Goes to War"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 19 starting page 489.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_20",
+      "parent_id": null,
+      "title": "Book 20: Olympian Gods in Arms",
+      "type": "book",
+      "level": 1,
+      "order": 23,
+      "page_start": 503,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 20",
+        "Olympian Gods in Arms"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 20 starting page 503.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_21",
+      "parent_id": null,
+      "title": "Book 21: Achilles Fights the River",
+      "type": "book",
+      "level": 1,
+      "order": 24,
+      "page_start": 520,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 21",
+        "Achilles Fights the River"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 21 starting page 520.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_22",
+      "parent_id": null,
+      "title": "Book 22: The Death of Hector",
+      "type": "book",
+      "level": 1,
+      "order": 25,
+      "page_start": 541,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 22",
+        "The Death of Hector"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 22 starting page 541.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_23",
+      "parent_id": null,
+      "title": "Book 23: Funeral Games for Patroclus",
+      "type": "book",
+      "level": 1,
+      "order": 26,
+      "page_start": 559,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 23",
+        "Funeral Games for Patroclus"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 23 starting page 559.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bk_24",
+      "parent_id": null,
+      "title": "Book 24: Achilles and Priam",
+      "type": "book",
+      "level": 1,
+      "order": 27,
+      "page_start": 588,
+      "page_end": null,
+      "subtitles": [
+        "BOOK 24",
+        "Achilles and Priam"
+      ],
+      "verification_status": "human_verified",
+      "verification_notes": "Primary Narrative Book 24 starting page 588.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bm_notes",
+      "parent_id": null,
+      "title": "Notes on the Translation",
+      "type": "back_matter",
+      "level": 1,
+      "order": 28,
+      "page_start": 637,
+      "page_end": 648,
+      "verification_status": "human_verified",
+      "verification_notes": "Explanatory scholarly notes by line reference.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bm_genealogies",
+      "parent_id": null,
+      "title": "The Genealogies",
+      "type": "back_matter",
+      "level": 1,
+      "order": 29,
+      "page_start": 649,
+      "page_end": 650,
+      "verification_status": "human_verified",
+      "verification_notes": "Mythological lineage charts.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bm_reading",
+      "parent_id": null,
+      "title": "Suggestions for Further Reading",
+      "type": "back_matter",
+      "level": 1,
+      "order": 30,
+      "page_start": 651,
+      "page_end": 654,
+      "verification_status": "human_verified",
+      "verification_notes": "Scholarly bibliography.",
+      "benchmark_status": "scored"
+    },
+    {
+      "node_id": "iliad_bm_glossary",
+      "parent_id": null,
+      "title": "Pronouncing Glossary",
+      "type": "back_matter",
+      "level": 1,
+      "order": 31,
+      "page_start": 655,
+      "page_end": 699,
+      "verification_status": "human_verified",
+      "verification_notes": "Alphabetical character glossary with page citations.",
+      "benchmark_status": "scored"
+    }
+  ]
+}

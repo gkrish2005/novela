@@ -1,0 +1,48 @@
+{
+  "document_id": "001_middlemarch",
+  "title": "2015.42254.Middlemarch",
+  "author": "",
+  "total_pages": 638,
+  "raw_char_count": 0,
+  "extraction_status": "image_only",
+  "parse_time_seconds": 83.61,
+  "ms_per_page": 131.06,
+  "pages_per_sec": 7.63,
+  "validation_report": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [],
+    "leaf_nodes": 0,
+    "text_loss_rate": 0.0,
+    "text_duplication_rate": 0.0,
+    "raw_char_count": 0
+  },
+  "toc_reconciliation": {},
+  "semantic_nodes_count": 0,
+  "fallback_partitions_count": 0,
+  "document_tree": {
+    "id": "root",
+    "parent_id": null,
+    "node_type": "document",
+    "title": "2015.42254.Middlemarch",
+    "ordinal": null,
+    "page_start": 1,
+    "page_end": 638,
+    "char_start": 0,
+    "char_end": 0,
+    "text_length": 0,
+    "confidence": 1.0,
+    "detection_method": "heuristic",
+    "uncertain": false,
+    "uncertainty_reasons": [],
+    "children": []
+  },
+  "narratable_chapters_count": 1,
+  "narratable_chapters": [
+    {
+      "title": "Chapter 1",
+      "text_length": 22,
+      "preview": "2015.42254.Middlemarch"
+    }
+  ]
+}

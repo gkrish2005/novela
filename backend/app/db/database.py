@@ -26,6 +26,10 @@ def _column_exists(conn: sqlite3.Connection, table: str, column: str) -> bool:
 def run_migrations() -> None:
     """Additive SQLite migrations for schema updates."""
     with sqlite3.connect(DB_PATH) as conn:
+        if not _column_exists(conn, "books", "voice_id"):
+            conn.execute("ALTER TABLE books ADD COLUMN voice_id TEXT")
+        if not _column_exists(conn, "books", "voice_prompt"):
+            conn.execute("ALTER TABLE books ADD COLUMN voice_prompt TEXT")
         if not _column_exists(conn, "chapters", "start_ms"):
             conn.execute("ALTER TABLE chapters ADD COLUMN start_ms INTEGER NOT NULL DEFAULT 0")
         if not _column_exists(conn, "chapters", "duration_ms"):
